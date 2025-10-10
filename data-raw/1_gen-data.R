@@ -1,3 +1,4 @@
+library(data.table)
 # gen_dates_by_isoyearweek ----
 days <- data.table::data.table(day = seq.Date(as.Date("1900-01-01"), as.Date("2100-01-01"), by = "days"))
 days[, isoyear := as.integer(format.Date(day, format = "%G"))]

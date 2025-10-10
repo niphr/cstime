@@ -66,7 +66,7 @@ isoyearweek_to_season_c_internal <- function(x) {
   isoweeks <- isoyearweek_to_isoweek_n(x)
   isoyears <- isoyearweek_to_isoyear_n(x)
   dplyr::case_when(
-    isoweeks >= 30 ~ paste0(isoyears, "/", isoyears + 1),
+    isoweeks >= 35 ~ paste0(isoyears, "/", isoyears + 1),
     TRUE ~ paste0(isoyears - 1, "/", isoyears)
   )
 }

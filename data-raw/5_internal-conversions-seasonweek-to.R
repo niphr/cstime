@@ -1,21 +1,5 @@
 devtools::load_all()
 
-seasonweek_to_isoweek_c_internal <- function(seasonweek) {
-  # influenza week 1 (x) is real week 30
-  if (max(seasonweek) > 52 | min(seasonweek) < 1) {
-    stop("seasonweek needs to be between 1 to 52, or 23.5")
-  }
-  
-  retval <- seasonweek
-  retval[seasonweek <= 23] <- seasonweek[seasonweek <= 23] + 29
-  retval[seasonweek > 23] <- seasonweek[seasonweek > 23] - 23
-  retval[seasonweek == 23.5] <- 53
-  # return double digit: 01, 09, 10, 11
-  retval <- formatC(retval, width = 2, flag = "0")
-  
-  return(retval)
-}
-
 seasonweek_to_isoweek_n_internal <- function(seasonweek) {
   # influenza week 1 (x) is real week 30
   if (max(seasonweek) > 52 | min(seasonweek) < 1) {
@@ -23,10 +7,15 @@ seasonweek_to_isoweek_n_internal <- function(seasonweek) {
   }
   
   retval <- seasonweek
-  retval[seasonweek <= 23] <- seasonweek[seasonweek <= 23] + 29
-  retval[seasonweek > 23] <- seasonweek[seasonweek > 23] - 23
-  retval[seasonweek == 23.5] <- 53
+  retval[seasonweek <= 18] <- seasonweek[seasonweek <= 18] + 34
+  retval[seasonweek > 18] <- seasonweek[seasonweek > 18] - 18
+  retval[seasonweek == 18.5] <- 53
   return(as.integer(retval))
+}
+
+seasonweek_to_isoweek_c_internal <- function(seasonweek){
+  retval <- seasonweek_to_isoweek_n_internal(seasonweek)
+  retval <- formatC(retval, width = 2, flag = "0")
 }
 
 conversions_seasonweek_to <- data.table(

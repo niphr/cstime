@@ -10,9 +10,9 @@ isoweek_to_seasonweek_n_internal <- function(isoweek) {
   }
   
   retval <- isoweek
-  retval[isoweek >= 30] <- isoweek[isoweek >= 30] - 29
-  retval[isoweek < 30] <- isoweek[isoweek < 30] + 23
-  retval[isoweek == 53] <- 23.5
+  retval[isoweek >= 35] <- isoweek[isoweek >= 35] - 34
+  retval[isoweek < 35] <- isoweek[isoweek < 35] + 18
+  retval[isoweek == 53] <- 18.5
   
   return(retval)
 }
