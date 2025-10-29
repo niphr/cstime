@@ -3,7 +3,7 @@ devtools::load_all()
 seasonweek_to_isoweek_n_internal <- function(seasonweek) {
   # influenza week 1 (x) is real week 30
   if (max(seasonweek) > 52 | min(seasonweek) < 1) {
-    stop("seasonweek needs to be between 1 to 52, or 23.5")
+    stop("seasonweek needs to be between 1 to 52, or 18.5")
   }
   
   retval <- seasonweek
@@ -19,7 +19,7 @@ seasonweek_to_isoweek_c_internal <- function(seasonweek){
 }
 
 conversions_seasonweek_to <- data.table(
-  seasonweek = c(1:23, 23.5, 24:52)
+  seasonweek = c(1:18, 18.5, 19:52)
 )
 
 conversions_seasonweek_to[, isoweek_c := seasonweek_to_isoweek_c_internal(seasonweek)]
