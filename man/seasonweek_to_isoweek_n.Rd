@@ -4,7 +4,7 @@
 \alias{seasonweek_to_isoweek_n}
 \alias{seasonweek_to_isoweek_n.default}
 \alias{seasonweek_to_isoweek_n.numeric}
-\title{Season week to ISO week (numeric). Season week 1 is ISO week 30.}
+\title{Season week to ISO week (numeric). Season week 1 is ISO week 35.}
 \usage{
 seasonweek_to_isoweek_n(x)
 
@@ -19,7 +19,7 @@ seasonweek_to_isoweek_n(x)
 ISO week in numeric
 }
 \description{
-Season week to ISO week (numeric). Season week 1 is ISO week 30.
+Season week to ISO week (numeric). Season week 1 is ISO week 35.
 }
 \examples{
 seasonweek_to_isoweek_n(31)

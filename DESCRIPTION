@@ -1,11 +1,11 @@
 Package: cstime
 Title: Date and Time Functions for Public Health Purposes
-Version: 2023.5.3
+Version: 2025.10.13
 Authors@R: c(
-  person("Chi", "Zhang", email = "andreachizhang@yahoo.com", role = c("aut", "cre"), 
+  person("Chi", "Zhang", email = "andreachizhang@yahoo.com", role = c("aut"), 
     comment = c(ORCID = "0000-0003-0501-5909")
   ),
-  person(c("Richard","Aubrey"), "White", email = "hello@rwhite.no", role = c("aut"),
+  person(c("Richard","Aubrey"), "White", email = "hello@rwhite.no", role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-6747-1726")
   ),
   person("CSIDS", email = "hello@csids.no", role = c("cph"))
@@ -18,7 +18,7 @@ Encoding: UTF-8
 LazyData: true
 LazyDataCompression: xz
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Depends:
     R (>= 3.5.0)
 Imports: 

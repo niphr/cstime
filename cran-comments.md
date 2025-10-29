@@ -1,22 +1,23 @@
-## Resubmission 2022-12-05
+## Updated submission
 
-In this version I have 
+The package has changed the definition of seasonweeks, to begin at week 35 instead of week 30.
 
-- Extended the description of package in DESCRIPTION
+## Test environments
 
-- Added 'value' to a few functions where they were missing
-
-## Resubmission 2022-12-01
-
-In this version I have changed http --> https from README.md:
-
-http://www.csids.no/cstime/articles/cstime.html to 
-https://www.csids.no/cstime/articles/cstime.html
-
+* local Ubuntu 22.04.5 LTS, R 4.5.0.
+* R-hub builder (linux and windows).
+* Win builder.
 
 ## R CMD check results
 
 There were no ERRORs or WARNINGs. 
 
-NOTE: 
-New submission by Chi Zhang (andreachizhang@yahoo.com)
+NOTE:
+
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Richard Aubrey White <hello@rwhite.no>'
+
+New maintainer:
+  Richard Aubrey White <hello@rwhite.no>
+Old maintainer(s):
+  Chi Zhang <andreachizhang@yahoo.com>

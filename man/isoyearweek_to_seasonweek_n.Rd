@@ -2,7 +2,7 @@
 % Please edit documentation in R/conversion_season.R
 \name{isoyearweek_to_seasonweek_n}
 \alias{isoyearweek_to_seasonweek_n}
-\title{ISO yearweek to season week (numeric). Season week 1 is natural week 30.}
+\title{ISO yearweek to season week (numeric). Season week 1 is ISO week 35.}
 \usage{
 isoyearweek_to_seasonweek_n(x)
 }
@@ -13,7 +13,7 @@ isoyearweek_to_seasonweek_n(x)
 Season week in numeric
 }
 \description{
-ISO yearweek to season week (numeric). Season week 1 is natural week 30.
+ISO yearweek to season week (numeric). Season week 1 is ISO week 35.
 }
 \examples{
 isoyearweek_to_seasonweek_n(c("2021-01"))

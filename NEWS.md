@@ -1,3 +1,7 @@
+# Version 2025.10.13
+
+- Seasons now start on week 35.
+
 # Version 2024.5.13
 
 - Adding season_to_last_date

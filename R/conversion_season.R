@@ -1,6 +1,6 @@
-#' ISO week to season week (numeric). Season week 1 is natural week 30.
+#' ISO week to season week (numeric). Season week 1 is natural week 35.
 #'
-#' @param x ISO week in a year (numeric), between 1 and 53. ISO week 53 is season week 23.5
+#' @param x ISO week in a year (numeric), between 1 and 53. ISO week 53 is season week 18.5
 #' @return Season week in numeric
 #' @rdname isoweek_to_seasonweek_n
 #' @export
@@ -28,7 +28,7 @@ isoweek_to_seasonweek_n.numeric <- function(x) {
   conversions_isoweek_n_to[.(x)]$seasonweek_n
 }
 
-#' ISO yearweek to season week (numeric). Season week 1 is natural week 30.
+#' ISO yearweek to season week (numeric). Season week 1 is ISO week 35.
 #'
 #' @param x ISO yearweek
 #' @return Season week in numeric
@@ -39,7 +39,7 @@ isoyearweek_to_seasonweek_n <- function(x) {
   isoweek_to_seasonweek_n(isoyearweek_to_isoweek_n(x))
 }
 
-#' Season week to ISO week (character). Season week 1 is ISO week 30.
+#' Season week to ISO week (character). Season week 1 is ISO week 35.
 #'
 #' @param x Season week in a year (numeric), between 1 and 52
 #' @return ISO week in character
@@ -63,7 +63,7 @@ seasonweek_to_isoweek_c.numeric <- function(x) {
   conversions_seasonweek_to[.(x)]$isoweek_c
 }
 
-#' Season week to ISO week (numeric). Season week 1 is ISO week 30.
+#' Season week to ISO week (numeric). Season week 1 is ISO week 35.
 #'
 #' @param x Season week in a year, between 1 and 52
 #' @return ISO week in numeric

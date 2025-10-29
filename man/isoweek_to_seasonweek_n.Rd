@@ -5,7 +5,7 @@
 \alias{isoweek_to_seasonweek_n.default}
 \alias{isoweek_to_seasonweek_n.character}
 \alias{isoweek_to_seasonweek_n.numeric}
-\title{ISO week to season week (numeric). Season week 1 is natural week 30.}
+\title{ISO week to season week (numeric). Season week 1 is natural week 35.}
 \usage{
 isoweek_to_seasonweek_n(x)
 
@@ -16,13 +16,13 @@ isoweek_to_seasonweek_n(x)
 \method{isoweek_to_seasonweek_n}{numeric}(x)
 }
 \arguments{
-\item{x}{ISO week in a year (numeric), between 1 and 53. ISO week 53 is season week 23.5}
+\item{x}{ISO week in a year (numeric), between 1 and 53. ISO week 53 is season week 18.5}
 }
 \value{
 Season week in numeric
 }
 \description{
-ISO week to season week (numeric). Season week 1 is natural week 30.
+ISO week to season week (numeric). Season week 1 is natural week 35.
 }
 \examples{
 isoweek_to_seasonweek_n(31)
