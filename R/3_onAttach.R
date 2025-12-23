@@ -12,6 +12,6 @@
     "cstime ",
     version,
     "\n",
-    "https://www.csids.no/cstime/"
+    "https://niphr.github.io/cstime/"
   ))
 }

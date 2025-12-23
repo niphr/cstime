@@ -1,11 +1,11 @@
-# cstime <a href="https://www.csids.no/cstime/"><img src="man/figures/logo.png" align="right" width="120" /></a>
+# cstime <a href="https://niphr.github.io/cstime/"><img src="man/figures/logo.png" align="right" width="120" /></a>
 
 [![CRAN status](https://www.r-pkg.org/badges/version/cstime)](https://cran.r-project.org/package=cstime)
 [![CRAN downloads](https://cranlogs.r-pkg.org/badges/cstime)](https://cran.r-project.org/package=cstime)
 
 ## Overview 
 
-[cstime](https://www.csids.no/cstime/) provides date and time functions for public health purposes.
+[cstime](https://niphr.github.io/cstime/) provides date and time functions for public health purposes.
 
 `cstime` provides convenient and consistent conversion between
 
@@ -16,26 +16,4 @@
 
 In addition, cstime provides calendar data for reference.
 
-Read the introduction vignette [here](https://www.csids.no/cstime/articles/cstime.html) or run `help(package="cstime")`.
-
-## csverse
-
-<a href="https://www.csids.no/packages.html"><img src="https://www.csids.no/packages/csverse.png" align="right" width="120" /></a>
-
-The [csverse](https://www.csids.no/packages.html) is a set of R packages developed to help solve problems that frequently occur when performing disease surveillance.
-
-```
-install.packages("attrib")
-install.packages("cs9")
-install.packages("csalert")
-install.packages("csdata")
-install.packages("csdb")
-install.packages("csmaps")
-install.packages("csstyle")
-install.packages("cstidy")
-install.packages("cstime")
-install.packages("csutil")
-install.packages("org")
-install.packages("plnr")
-```
-
+Read the introduction vignette [here](https://niphr.github.io/cstime/articles/cstime.html) or run `help(package="cstime")`.
