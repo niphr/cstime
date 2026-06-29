@@ -1,0 +1,82 @@
+# Package index
+
+## All functions
+
+- [`date_to_calmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calmonth_c.md)
+  : Date -\> calmonth (character)
+- [`date_to_calmonth_n()`](https://niphr.github.io/cstime/reference/date_to_calmonth_n.md)
+  : Date -\> calmonth (numeric)
+- [`date_to_calyear_c()`](https://niphr.github.io/cstime/reference/date_to_calyear_c.md)
+  : Date -\> calyear (character)
+- [`date_to_calyear_n()`](https://niphr.github.io/cstime/reference/date_to_calyear_n.md)
+  : Date -\> calyear (numeric)
+- [`date_to_calyearmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calyearmonth_c.md)
+  : Date -\> calyearmonth (character)
+- [`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md)
+  : ISO quarter (character) from Date object
+- [`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md)
+  : ISO quarter (numeric) from Date object
+- [`date_to_isoweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoweek_c.md)
+  : ISO week (character) from Date object
+- [`date_to_isoweek_n()`](https://niphr.github.io/cstime/reference/date_to_isoweek_n.md)
+  : ISO week (numeric) from Date object
+- [`date_to_isoyear_c()`](https://niphr.github.io/cstime/reference/date_to_isoyear_c.md)
+  : ISO year (character) from Date object
+- [`date_to_isoyear_n()`](https://niphr.github.io/cstime/reference/date_to_isoyear_n.md)
+  : ISO year (numeric) from Date object
+- [`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md)
+  : ISO year and quarter (character) from Date object
+- [`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
+  : ISO year and week (character) from Date object
+- [`date_to_season_c()`](https://niphr.github.io/cstime/reference/date_to_season_c.md)
+  : Date to season.
+- [`date_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/date_to_seasonweek_n.md)
+  : Date to season week.
+- [`dates_by_isoyearweek`](https://niphr.github.io/cstime/reference/dates_by_isoyearweek.md)
+  : Dates of different days within isoyearweeks
+- [`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md)
+  : ISO week to season week (numeric). Season week 1 is natural week 35.
+- [`isoyear_to_last_date()`](https://niphr.github.io/cstime/reference/isoyear_to_last_date.md)
+  : Last Sunday in ISO year
+- [`isoyear_to_last_isoweek_n()`](https://niphr.github.io/cstime/reference/isoyear_to_last_isoweek_n.md)
+  : Last ISO week (numeric) in ISO year
+- [`isoyear_to_last_isoyearweek_c()`](https://niphr.github.io/cstime/reference/isoyear_to_last_isoyearweek_c.md)
+  : Last ISO yearweek (character) in ISO year
+- [`isoyearweek_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_c.md)
+  : ISO yearweek to quarter (character)
+- [`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md)
+  : ISO yearweek to quarter (numeric)
+- [`isoyearweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_c.md)
+  : ISO yearweek to week (character)
+- [`isoyearweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_n.md)
+  : ISO yearweek to week (numeric)
+- [`isoyearweek_to_isoyear_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyear_c.md)
+  : ISO yearweek to year (character)
+- [`isoyearweek_to_isoyear_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyear_n.md)
+  : ISO yearweek to year (numeric)
+- [`isoyearweek_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyearquarter_c.md)
+  : ISO yearweek to ISO yearquarter (character)
+- [`isoyearweek_to_last_date()`](https://niphr.github.io/cstime/reference/isoyearweek_to_last_date.md)
+  : Last date in ISO yearweek
+- [`isoyearweek_to_season_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_season_c.md)
+  : ISO yearweek to season.
+- [`isoyearweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_seasonweek_n.md)
+  : ISO yearweek to season week (numeric). Season week 1 is ISO week 35.
+- [`keep_sundays()`](https://niphr.github.io/cstime/reference/keep_sundays.md)
+  : keep_sundays
+- [`keep_sundays_and_latest_date()`](https://niphr.github.io/cstime/reference/keep_sundays_and_latest_date.md)
+  : keep_sundays_and_latest_date
+- [`keep_sundays_and_latest_date_internal()`](https://niphr.github.io/cstime/reference/keep_sundays_and_latest_date_internal.md)
+  : keep_sundays_and_latest_date_internal
+- [`nor_workdays_by_date`](https://niphr.github.io/cstime/reference/nor_workdays_by_date.md)
+  : Norwegian workdays and holidays by date
+- [`nor_workdays_by_isoyearweek`](https://niphr.github.io/cstime/reference/nor_workdays_by_isoyearweek.md)
+  : Norwegian workdays and holidays by isoyearweek
+- [`now_c()`](https://niphr.github.io/cstime/reference/now_c.md) :
+  Current time as character
+- [`season_to_last_date()`](https://niphr.github.io/cstime/reference/season_to_last_date.md)
+  : Last date in season
+- [`seasonweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_c.md)
+  : Season week to ISO week (character). Season week 1 is ISO week 35.
+- [`seasonweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_n.md)
+  : Season week to ISO week (numeric). Season week 1 is ISO week 35.
