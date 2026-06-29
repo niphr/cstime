@@ -33,3 +33,4 @@ Suggests:
     lubridate
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+Config/Needs/website: niphr/cstemplate
