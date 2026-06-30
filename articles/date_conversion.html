@@ -87,23 +87,22 @@
 
     
     
-<p>We create the following functions to make it easier to work with date
-and times in different formats.</p>
-<p>For the input, we allow either a numeric (3) or string (“03”,
-“2020-03”).</p>
-<p>For the output, the user need to specify whether numeric or string is
-required. Functions end with <code>c</code> returns a character output
-and <code>n</code> returns a double.</p>
+<p>These functions simplify working with dates and times across
+different formats.</p>
+<p>Inputs can be numeric (e.g. <code>3</code>) or character
+(e.g. <code>"03"</code>, <code>"2020-03"</code>). The output type is
+controlled by the function suffix: functions ending in <code>_c</code>
+return a character, those ending in <code>_n</code> return a double.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://niphr.github.io/cstime/">cstime</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; cstime 2025.10.13</span></span>
 <span><span class="co">#&gt; https://niphr.github.io/cstime/</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org" class="external-link">magrittr</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
-<h2 id="which-yearweek-is-this-date">Which year/week is this date?<a class="anchor" aria-label="anchor" href="#which-yearweek-is-this-date"></a>
+<h2 id="which-year-and-week-is-this-date">Which year and week is this date?<a class="anchor" aria-label="anchor" href="#which-year-and-week-is-this-date"></a>
 </h2>
-<p>By default the functions returns the isoyear or isoweek of
-<strong>today</strong>.</p>
+<p>When called with no arguments, the functions return the isoyear or
+isoweek of today.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/date_to_isoyear_c.html">date_to_isoyear_c</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "2026"</span></span>
@@ -126,7 +125,7 @@ and <code>n</code> returns a double.</p>
 <span><span class="co">#&gt; [1] "2021-32"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="get-isoyearisoweek-from-a-isoyearweek-string">Get isoyear/isoweek from a <code>isoyearweek</code> string<a class="anchor" aria-label="anchor" href="#get-isoyearisoweek-from-a-isoyearweek-string"></a>
+<h2 id="get-isoyear-and-isoweek-from-an-isoyearweek-string">Get isoyear and isoweek from an isoyearweek string<a class="anchor" aria-label="anchor" href="#get-isoyear-and-isoweek-from-an-isoyearweek-string"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/isoyearweek_to_isoyear_c.html">isoyearweek_to_isoyear_c</a></span><span class="op">(</span><span class="st">"2021-02"</span><span class="op">)</span></span>
@@ -137,8 +136,8 @@ and <code>n</code> returns a double.</p>
 <span><span class="co">#&gt; [1] "02"</span></span>
 <span><span class="fu"><a href="../reference/isoyearweek_to_isoweek_n.html">isoyearweek_to_isoweek_n</a></span><span class="op">(</span><span class="st">"2021-02"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 2</span></span></code></pre></div>
-<p>A list of <code>isoyearweek</code> can be accessed in the following
-way.</p>
+<p>The built-in dataset <code>dates_by_isoyearweek</code> provides a
+reference table. Here is how to subset it to specific years:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">yrwk_19_20</span> <span class="op">&lt;-</span> <span class="va">dates_by_isoyearweek</span><span class="op">[</span><span class="va">isoyear</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2019</span>, <span class="fl">2020</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">yrwk_19_20</span><span class="op">)</span></span>

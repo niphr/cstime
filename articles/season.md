@@ -1,11 +1,12 @@
 # Season week
 
-Season week (i.e. the week number within a season) conversion is used
-for certain outcomes of interest, such as influenza. It is frequently
-used for plotting purposes.
+Season week is the week number within an epidemiological season. It is
+used for surveillance outcomes such as influenza, where aligning data to
+a season rather than a calendar year makes trends easier to compare
+across years.
 
-Isoweek can be integers between 1 and 53. Season week can be integers
-between 1 and 52. When isoweek is 53, season week is 18.5.
+Isoweek runs from 1 to 53; season week runs from 1 to 52. When isoweek
+is 53, the corresponding season week is 18.5.
 
 ``` r
 library(cstime)
@@ -20,7 +21,14 @@ library(data.table)
 #>     %notin%
 ```
 
+## Mapping between isoweek and season week
+
+The chart below shows the relationship across all isoweek values, with
+the special case of isoweek 53 highlighted.
+
 ![](season_files/figure-html/unnamed-chunk-2-1.png)
+
+## Conversion functions
 
 ``` r
 seasonweek_to_isoweek_c(10)

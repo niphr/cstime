@@ -1,15 +1,14 @@
 # Intro to cstime
 
-`cstime` provides date time functions for public health purposes.
-
-The core functionality is consistent time conversion between :
+`cstime` provides date and time functions for public health
+surveillance. Its main purpose is consistent conversion between:
 
 - Date.
 - Isoyear, isoweek, isoyearweek.
 - Season week.
 
-It also provides functions to generate rolling dates for computing the
-weekly, bi-weekly, 4 week averages.
+It also provides functions to generate rolling date ranges for computing
+weekly, bi-weekly, and 4-week averages.
 
 `cstime` is part of the [csverse](https://niphr.github.io/packages.html)
 package suite.
@@ -21,14 +20,14 @@ library(cstime)
 library(magrittr)
 ```
 
-To convert a date to isoyear:
+## Date to isoyear
 
 ``` r
 date_to_isoyear_c('2021-01-01')
 #> [1] "2020"
 ```
 
-To convert a isoyearweek string to isoyear/isoweek:
+## Isoyearweek string to isoyear and isoweek
 
 ``` r
 isoyearweek_to_isoyear_c("2021-02")
@@ -37,11 +36,11 @@ isoyearweek_to_isoweek_c("2021-02")
 #> [1] "02"
 ```
 
-To convert a season week to isoweek (and reverse):
+## Season week and isoweek
 
 ``` r
 seasonweek_to_isoweek_n(10)
 #> [1] 44
-isoweek_to_seasonweek_n(1)  
+isoweek_to_seasonweek_n(1)
 #> [1] 19
 ```
