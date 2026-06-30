@@ -1,10 +1,3 @@
-# cstime
-
-[![CRAN
-status](https://www.r-pkg.org/badges/version/cstime)](https://cran.r-project.org/package=cstime)
-[![CRAN
-downloads](https://cranlogs.r-pkg.org/badges/cstime)](https://cran.r-project.org/package=cstime)
-
 ## Overview
 
 [cstime](https://niphr.github.io/cstime/) provides date and time
