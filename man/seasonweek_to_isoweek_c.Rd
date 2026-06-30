@@ -4,7 +4,7 @@
 \alias{seasonweek_to_isoweek_c}
 \alias{seasonweek_to_isoweek_c.default}
 \alias{seasonweek_to_isoweek_c.numeric}
-\title{Season week to ISO week (character). Season week 1 is ISO week 35.}
+\title{Season week to ISO week (character)}
 \usage{
 seasonweek_to_isoweek_c(x)
 
@@ -13,14 +13,21 @@ seasonweek_to_isoweek_c(x)
 \method{seasonweek_to_isoweek_c}{numeric}(x)
 }
 \arguments{
-\item{x}{Season week in a year (numeric), between 1 and 52}
+\item{x}{Season week as a number between 1 and 52.}
 }
 \value{
-ISO week in character
+ISO week as a character vector (e.g. "35").
 }
 \description{
-Season week to ISO week (character). Season week 1 is ISO week 35.
+Maps a season week number back to its ISO week, returned as a zero-padded
+character string. This is the inverse of \code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}}.
+}
+\details{
+Season week 1 corresponds to ISO week 35, season week 2 to ISO week 36, and
+so on, wrapping around the new year. The ISO week is returned as two digits,
+e.g. "35" or "01".
 }
 \examples{
-seasonweek_to_isoweek_c(31)
+seasonweek_to_isoweek_c(1)
+seasonweek_to_isoweek_c(c(31, 52))
 }

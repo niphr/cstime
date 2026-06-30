@@ -1,11 +1,21 @@
-#' ISO week to season week (numeric). Season week 1 is natural week 35.
+#' ISO week to season week (numeric)
 #'
-#' @param x ISO week in a year (numeric), between 1 and 53. ISO week 53 is season week 18.5
-#' @return Season week in numeric
+#' Maps an ISO week number to its position within the surveillance season,
+#' where season week 1 corresponds to ISO week 35.
+#'
+#' @details
+#' Surveillance seasons start at ISO week 35, so ISO week 35 is season week 1,
+#' ISO week 36 is season week 2, and so on, wrapping around the new year. ISO
+#' week 53 (which only occurs in long ISO years) maps to the half-step season
+#' week 18.5 so that the surrounding weeks keep consistent numbering.
+#'
+#' @param x ISO week as a number between 1 and 53.
+#' @return Season week as a numeric vector (ISO week 53 returns 18.5).
 #' @rdname isoweek_to_seasonweek_n
 #' @export
-#' @examples 
-#' isoweek_to_seasonweek_n(31)
+#' @examples
+#' isoweek_to_seasonweek_n(35)
+#' isoweek_to_seasonweek_n(c(31, 53))
 isoweek_to_seasonweek_n <- function(x) {
   UseMethod("isoweek_to_seasonweek_n", x)
 }
@@ -28,25 +38,43 @@ isoweek_to_seasonweek_n.numeric <- function(x) {
   conversions_isoweek_n_to[.(x)]$seasonweek_n
 }
 
-#' ISO yearweek to season week (numeric). Season week 1 is ISO week 35.
+#' ISO yearweek to season week (numeric)
 #'
-#' @param x ISO yearweek
-#' @return Season week in numeric
+#' Maps an ISO yearweek to its position within the surveillance season, where
+#' season week 1 corresponds to ISO week 35.
+#'
+#' @details
+#' The ISO week is extracted from the yearweek string and then converted with
+#' [isoweek_to_seasonweek_n()], so the same season-week numbering and the 18.5
+#' half-step for ISO week 53 apply.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2021-01".
+#' @return Season week as a numeric vector.
 #' @examples
-#' isoyearweek_to_seasonweek_n(c("2021-01"))
+#' isoyearweek_to_seasonweek_n(c("2021-01", "2021-35"))
 #' @export
 isoyearweek_to_seasonweek_n <- function(x) {
   isoweek_to_seasonweek_n(isoyearweek_to_isoweek_n(x))
 }
 
-#' Season week to ISO week (character). Season week 1 is ISO week 35.
+#' Season week to ISO week (character)
 #'
-#' @param x Season week in a year (numeric), between 1 and 52
-#' @return ISO week in character
+#' Maps a season week number back to its ISO week, returned as a zero-padded
+#' character string. This is the inverse of [isoweek_to_seasonweek_n()].
+#'
+#' @details
+#' Season week 1 corresponds to ISO week 35, season week 2 to ISO week 36, and
+#' so on, wrapping around the new year. The ISO week is returned as two digits,
+#' e.g. "35" or "01".
+#'
+#' @param x Season week as a number between 1 and 52.
+#' @return ISO week as a character vector (e.g. "35").
 #' @rdname seasonweek_to_isoweek_c
 #' @export
-#' @examples 
-#' seasonweek_to_isoweek_c(31)
+#' @examples
+#' seasonweek_to_isoweek_c(1)
+#' seasonweek_to_isoweek_c(c(31, 52))
 seasonweek_to_isoweek_c <- function(x) {
   UseMethod("seasonweek_to_isoweek_c", x)
 }
@@ -63,14 +91,22 @@ seasonweek_to_isoweek_c.numeric <- function(x) {
   conversions_seasonweek_to[.(x)]$isoweek_c
 }
 
-#' Season week to ISO week (numeric). Season week 1 is ISO week 35.
+#' Season week to ISO week (numeric)
 #'
-#' @param x Season week in a year, between 1 and 52
-#' @return ISO week in numeric
+#' Maps a season week number back to its ISO week, returned as a number. This is
+#' the inverse of [isoweek_to_seasonweek_n()].
+#'
+#' @details
+#' Season week 1 corresponds to ISO week 35, season week 2 to ISO week 36, and
+#' so on, wrapping around the new year.
+#'
+#' @param x Season week as a number between 1 and 52.
+#' @return ISO week as an integer vector (1 to 53).
 #' @rdname seasonweek_to_isoweek_n
 #' @export
-#' @examples 
-#' seasonweek_to_isoweek_n(31)
+#' @examples
+#' seasonweek_to_isoweek_n(1)
+#' seasonweek_to_isoweek_n(c(31, 52))
 seasonweek_to_isoweek_n <- function(x) {
   UseMethod("seasonweek_to_isoweek_n", x)
 }
@@ -87,10 +123,20 @@ seasonweek_to_isoweek_n.numeric <- function(x) {
   conversions_seasonweek_to[.(x)]$isoweek_n
 }
 
-#' ISO yearweek to season.
+#' ISO yearweek to season (character)
 #'
-#' @param x isoyearweek, connected with '-'
-#' @return Season, e.g. 2020/2021
+#' Maps an ISO yearweek to the surveillance season it belongs to, written as
+#' "yyyy/yyyy".
+#'
+#' @details
+#' Seasons start at ISO week 35 (season week 1). ISO weeks 35 and later belong
+#' to the season beginning in that calendar year, while earlier weeks belong to
+#' the season that began the previous calendar year. For example "2021-01" falls
+#' in season "2020/2021" and "2021-50" falls in season "2021/2022".
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2021-01".
+#' @return Season as a character vector (e.g. "2020/2021").
 #' @rdname isoyearweek_to_season_c
 #' @examples
 #' isoyearweek_to_season_c(c("2021-01", "2021-50"))
@@ -111,23 +157,43 @@ isoyearweek_to_season_c.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$season_c
 }
 
-#' Date to season.
+#' Date to season (character)
 #'
-#' @param x date
-#' @return Season, e.g. 2020/2021
+#' Maps a date to the surveillance season it belongs to, written as
+#' "yyyy/yyyy".
+#'
+#' @details
+#' The date is first converted to an ISO yearweek with
+#' [date_to_isoyearweek_c()] and then to a season with
+#' [isoyearweek_to_season_c()]. Seasons start at ISO week 35, so dates in early
+#' January belong to the season that began the previous calendar year.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#' @return Season as a character vector (e.g. "2020/2021").
 #' @examples
 #' date_to_season_c(c("2021-01-01", "2021-12-01"))
+#' date_to_season_c(as.Date("2021-09-01"))
 #' @export
 date_to_season_c <- function(x) {
   isoyearweek_to_season_c(date_to_isoyearweek_c(x))
 }
 
-#' Date to season week.
+#' Date to season week (numeric)
 #'
-#' @param x date
-#' @return Season week in numeric
+#' Maps a date to its position within the surveillance season, where season
+#' week 1 corresponds to ISO week 35.
+#'
+#' @details
+#' The date is first converted to an ISO yearweek with
+#' [date_to_isoyearweek_c()] and then to a season week with
+#' [isoyearweek_to_seasonweek_n()]. As with [isoweek_to_seasonweek_n()], ISO
+#' week 53 maps to the half-step season week 18.5.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#' @return Season week as a numeric vector.
 #' @examples
 #' date_to_seasonweek_n(c("2021-01-01", "2021-12-01"))
+#' date_to_seasonweek_n(as.Date("2021-09-01"))
 #' @export
 date_to_seasonweek_n <- function(x) {
   isoyearweek_to_seasonweek_n(date_to_isoyearweek_c(x))

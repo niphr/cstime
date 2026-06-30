@@ -4,7 +4,7 @@
 \alias{isoyearweek_to_season_c}
 \alias{isoyearweek_to_season_c.default}
 \alias{isoyearweek_to_season_c.character}
-\title{ISO yearweek to season.}
+\title{ISO yearweek to season (character)}
 \usage{
 isoyearweek_to_season_c(x)
 
@@ -13,13 +13,21 @@ isoyearweek_to_season_c(x)
 \method{isoyearweek_to_season_c}{character}(x)
 }
 \arguments{
-\item{x}{isoyearweek, connected with '-'}
+\item{x}{ISO yearweek as a character string of the form "yyyy-ww", e.g.
+"2021-01".}
 }
 \value{
-Season, e.g. 2020/2021
+Season as a character vector (e.g. "2020/2021").
 }
 \description{
-ISO yearweek to season.
+Maps an ISO yearweek to the surveillance season it belongs to, written as
+"yyyy/yyyy".
+}
+\details{
+Seasons start at ISO week 35 (season week 1). ISO weeks 35 and later belong
+to the season beginning in that calendar year, while earlier weeks belong to
+the season that began the previous calendar year. For example "2021-01" falls
+in season "2020/2021" and "2021-50" falls in season "2021/2022".
 }
 \examples{
 isoyearweek_to_season_c(c("2021-01", "2021-50"))

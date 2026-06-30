@@ -2,19 +2,27 @@
 % Please edit documentation in R/conversion_season.R
 \name{date_to_seasonweek_n}
 \alias{date_to_seasonweek_n}
-\title{Date to season week.}
+\title{Date to season week (numeric)}
 \usage{
 date_to_seasonweek_n(x)
 }
 \arguments{
-\item{x}{date}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-Season week in numeric
+Season week as a numeric vector.
 }
 \description{
-Date to season week.
+Maps a date to its position within the surveillance season, where season
+week 1 corresponds to ISO week 35.
+}
+\details{
+The date is first converted to an ISO yearweek with
+\code{\link[=date_to_isoyearweek_c]{date_to_isoyearweek_c()}} and then to a season week with
+\code{\link[=isoyearweek_to_seasonweek_n]{isoyearweek_to_seasonweek_n()}}. As with \code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}}, ISO
+week 53 maps to the half-step season week 18.5.
 }
 \examples{
 date_to_seasonweek_n(c("2021-01-01", "2021-12-01"))
+date_to_seasonweek_n(as.Date("2021-09-01"))
 }

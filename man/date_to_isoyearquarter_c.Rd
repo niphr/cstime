@@ -5,7 +5,7 @@
 \alias{date_to_isoyearquarter_c.default}
 \alias{date_to_isoyearquarter_c.character}
 \alias{date_to_isoyearquarter_c.Date}
-\title{ISO year and quarter (character) from Date object}
+\title{Date to ISO yearquarter (character)}
 \usage{
 date_to_isoyearquarter_c(x = lubridate::today())
 
@@ -16,15 +16,21 @@ date_to_isoyearquarter_c(x = lubridate::today())
 \method{date_to_isoyearquarter_c}{Date}(x = lubridate::today())
 }
 \arguments{
-\item{x}{a Date object or string, in the form of 'yyyy-mm-dd'}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-ISO year and quarter in character
+ISO yearquarter as a character vector (e.g. "2021-Q3").
 }
 \description{
-ISO year and quarter (character) from Date object
+Converts a date to a combined ISO year and quarter string of the form
+"yyyy-Qn".
+}
+\details{
+The output combines the ISO year (see \code{\link[=date_to_isoyear_c]{date_to_isoyear_c()}}) and the
+ISO-week-based quarter (see \code{\link[=date_to_isoquarter_c]{date_to_isoquarter_c()}}), for example
+"2021-Q3".
 }
 \examples{
-date_to_isoyearquarter_c("2021-08-11")
-date_to_isoyearquarter_c(lubridate::today())
+date_to_isoyearquarter_c(as.Date("2021-08-11"))
+date_to_isoyearquarter_c("2021-01-01")
 }

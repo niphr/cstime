@@ -2,19 +2,27 @@
 % Please edit documentation in R/conversion_season.R
 \name{date_to_season_c}
 \alias{date_to_season_c}
-\title{Date to season.}
+\title{Date to season (character)}
 \usage{
 date_to_season_c(x)
 }
 \arguments{
-\item{x}{date}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-Season, e.g. 2020/2021
+Season as a character vector (e.g. "2020/2021").
 }
 \description{
-Date to season.
+Maps a date to the surveillance season it belongs to, written as
+"yyyy/yyyy".
+}
+\details{
+The date is first converted to an ISO yearweek with
+\code{\link[=date_to_isoyearweek_c]{date_to_isoyearweek_c()}} and then to a season with
+\code{\link[=isoyearweek_to_season_c]{isoyearweek_to_season_c()}}. Seasons start at ISO week 35, so dates in early
+January belong to the season that began the previous calendar year.
 }
 \examples{
 date_to_season_c(c("2021-01-01", "2021-12-01"))
+date_to_season_c(as.Date("2021-09-01"))
 }

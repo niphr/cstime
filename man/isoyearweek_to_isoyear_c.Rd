@@ -4,7 +4,7 @@
 \alias{isoyearweek_to_isoyear_c}
 \alias{isoyearweek_to_isoyear_c.default}
 \alias{isoyearweek_to_isoyear_c.character}
-\title{ISO yearweek to year (character)}
+\title{ISO yearweek to ISO year (character)}
 \usage{
 isoyearweek_to_isoyear_c(x)
 
@@ -13,14 +13,20 @@ isoyearweek_to_isoyear_c(x)
 \method{isoyearweek_to_isoyear_c}{character}(x)
 }
 \arguments{
-\item{x}{Year-week, e.g. "2020-19" for 19th week in 2020}
+\item{x}{ISO yearweek as a character string of the form "yyyy-ww", e.g.
+"2020-19" for the 19th ISO week of 2020.}
 }
 \value{
-ISO year in character
+ISO year as a character vector (e.g. "2020").
 }
 \description{
-This function breaks the string connected with '-' into year/week
+Extracts the ISO year from an ISO yearweek string and returns it as a
+character string.
+}
+\details{
+The input is split on the hyphen into year and week, and the year part is
+returned. The week part is ignored.
 }
 \examples{
-isoyearweek_to_isoyear_c('2020-10')
+isoyearweek_to_isoyear_c("2020-10")
 }

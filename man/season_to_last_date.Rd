@@ -4,7 +4,7 @@
 \alias{season_to_last_date}
 \alias{season_to_last_date.default}
 \alias{season_to_last_date.character}
-\title{Last date in season}
+\title{Season to last date (Sunday)}
 \usage{
 season_to_last_date(x)
 
@@ -13,14 +13,21 @@ season_to_last_date(x)
 \method{season_to_last_date}{character}(x)
 }
 \arguments{
-\item{x}{Season, e.g. "2019/2020"}
+\item{x}{Season as a character string of the form "yyyy/yyyy", e.g.
+"2019/2020".}
 }
 \value{
-Date of last Sunday of that season
+A \link[base:Date]{base::Date} vector giving the last Sunday of each season.
 }
 \description{
-Returns the last Sunday in the season
+Returns the date of the Sunday that ends a given season.
+}
+\details{
+A season is written "yyyy/yyyy" where the two years are consecutive (for
+example "2019/2020"). Seasons are aligned to ISO weeks, with season week 1
+starting at ISO week 35; the season therefore ends in late summer of the
+second year. The returned date is the Sunday of the final week of the season.
 }
 \examples{
-isoyearweek_to_last_date(c("2019-19", "2020-01"))
+season_to_last_date(c("2019/2020", "2020/2021"))
 }

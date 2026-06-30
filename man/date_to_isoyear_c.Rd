@@ -5,7 +5,7 @@
 \alias{date_to_isoyear_c.default}
 \alias{date_to_isoyear_c.character}
 \alias{date_to_isoyear_c.Date}
-\title{ISO year (character) from Date object}
+\title{Date to ISO year (character)}
 \usage{
 date_to_isoyear_c(x = lubridate::today())
 
@@ -16,15 +16,24 @@ date_to_isoyear_c(x = lubridate::today())
 \method{date_to_isoyear_c}{Date}(x = lubridate::today())
 }
 \arguments{
-\item{x}{a Date object or string, in the form of 'yyyy-mm-dd'}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-ISO year in character
+ISO year as a character vector (e.g. "2021").
 }
 \description{
-ISO year (character) from Date object
+Converts a date to its ISO 8601 week-based year, returned as a character
+string.
+}
+\details{
+The ISO 8601 week-based year is not always the same as the calendar year.
+ISO weeks run Monday to Sunday, and week 1 is the week containing the year's
+first Thursday. As a result the first days of January can belong to the last
+ISO week of the previous year, and the last days of December can belong to
+ISO week 1 of the following year. For example 2021-01-01 is a Friday that
+falls in ISO week 53 of ISO year 2020.
 }
 \examples{
-date_to_isoyear_c("2021-08-11")
-date_to_isoyear_c(lubridate::today())
+date_to_isoyear_c(as.Date("2021-08-11"))
+date_to_isoyear_c("2021-01-01")
 }

@@ -5,7 +5,7 @@
 \alias{date_to_calyearmonth_c.default}
 \alias{date_to_calyearmonth_c.character}
 \alias{date_to_calyearmonth_c.Date}
-\title{Date -> calyearmonth (character)}
+\title{Date to calendar yearmonth (character)}
 \usage{
 date_to_calyearmonth_c(x = lubridate::today())
 
@@ -16,15 +16,20 @@ date_to_calyearmonth_c(x = lubridate::today())
 \method{date_to_calyearmonth_c}{Date}(x = lubridate::today())
 }
 \arguments{
-\item{x}{a Date object or string, in the form of 'yyyy-mm-dd'}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-calyearmonth ("YYYY-MXX")
+Calendar yearmonth as a character vector (e.g. "2021-M08").
 }
 \description{
-Date -> calyearmonth (character)
+Converts a date to a combined calendar year and month string of the form
+"yyyy-Mmm".
+}
+\details{
+The output combines the calendar year and the zero-padded calendar month,
+separated by "-M", for example "2021-M08".
 }
 \examples{
-date_to_calyearmonth_c("2021-08-11")
-date_to_calyearmonth_c(lubridate::today())
+date_to_calyearmonth_c(as.Date("2021-08-11"))
+date_to_calyearmonth_c("2021-01-01")
 }

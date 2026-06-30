@@ -5,20 +5,33 @@
 \alias{nor_workdays_by_date}
 \title{Norwegian workdays and holidays by date}
 \format{
+A \link[data.table:data.table]{data.table::data.table} with one row per date and the following columns:
 \describe{
 \item{date}{Date.}
-\item{day_of_week}{Integer. 1 = Monday, 7 = Sunday}
-\item{mon_to_fri}{Integer. 1 between Monday and Friday, 0 between Saturday and Sunday}
-\item{sat_to_sun}{Integer. 1 between Saturday and Sunday, 0 between Monday and Friday}
-\item{public_holiday}{Integer. 1 if public holiday (helligdag), 0 if not public holiday}
-\item{freeday}{Integer. 1 if public holiday (helligdag) or sat_to_sun==1, 0 otherwise}
-\item{workday}{Integer. 1 if freeday==0, 0 if freeday==1}
+\item{day_of_week}{Integer. 1 = Monday, 7 = Sunday.}
+\item{mon_to_fri}{Integer. 1 if Monday to Friday, 0 if Saturday or Sunday.}
+\item{sat_to_sun}{Integer. 1 if Saturday or Sunday, 0 if Monday to Friday.}
+\item{public_holiday}{Integer. 1 if a public holiday (helligdag), 0 otherwise.}
+\item{freeday}{Integer. 1 if a public holiday or Saturday/Sunday, 0 otherwise.}
+\item{workday}{Integer. 1 if \code{freeday} is 0, 0 if \code{freeday} is 1.}
 }
+}
+\source{
+Derived from the Norwegian public-holiday list in
+\code{inst/rawdata/norway_holidays.xlsx}. See \verb{data-raw/1_gen-data.R} in the
+package source.
 }
 \usage{
 nor_workdays_by_date
 }
 \description{
-Norwegian workdays and holidays by date
+A daily calendar flagging Norwegian public holidays, weekends and workdays
+for each date in the covered range.
+}
+\examples{
+head(nor_workdays_by_date)
+
+# Count the workdays in the dataset
+sum(nor_workdays_by_date$workday)
 }
 \keyword{datasets}

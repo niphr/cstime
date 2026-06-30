@@ -5,7 +5,7 @@
 \alias{date_to_isoquarter_n.default}
 \alias{date_to_isoquarter_n.character}
 \alias{date_to_isoquarter_n.Date}
-\title{ISO quarter (numeric) from Date object}
+\title{Date to ISO quarter (numeric)}
 \usage{
 date_to_isoquarter_n(x = lubridate::today())
 
@@ -16,15 +16,21 @@ date_to_isoquarter_n(x = lubridate::today())
 \method{date_to_isoquarter_n}{Date}(x = lubridate::today())
 }
 \arguments{
-\item{x}{a Date object or string, in the form of 'yyyy-mm-dd'}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-ISO quarter in numeric
+ISO quarter as an integer vector (1 to 4).
 }
 \description{
-ISO quarter (numeric) from Date object
+Converts a date to an ISO-week-based quarter (1 to 4), returned as a number.
+}
+\details{
+The quarter is derived from the ISO week rather than the calendar month:
+weeks 1 to 13 are quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are
+quarter 3, and weeks 40 onwards (including week 53 in long ISO years) are
+quarter 4.
 }
 \examples{
-date_to_isoquarter_n("2021-08-11")
-date_to_isoquarter_n(lubridate::today())
+date_to_isoquarter_n(as.Date("2021-08-11"))
+date_to_isoquarter_n("2021-01-01")
 }

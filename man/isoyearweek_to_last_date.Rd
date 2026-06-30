@@ -4,7 +4,7 @@
 \alias{isoyearweek_to_last_date}
 \alias{isoyearweek_to_last_date.default}
 \alias{isoyearweek_to_last_date.character}
-\title{Last date in ISO yearweek}
+\title{ISO yearweek to last date (Sunday)}
 \usage{
 isoyearweek_to_last_date(x)
 
@@ -13,13 +13,18 @@ isoyearweek_to_last_date(x)
 \method{isoyearweek_to_last_date}{character}(x)
 }
 \arguments{
-\item{x}{ISO yearweek, e.g. "2020-19" for 19th week in 2020}
+\item{x}{ISO yearweek as a character string of the form "yyyy-ww", e.g.
+"2020-19" for the 19th ISO week of 2020.}
 }
 \value{
-Date of Sunday of that isoyearweek
+A \link[base:Date]{base::Date} vector giving the Sunday of each ISO yearweek.
 }
 \description{
-Returns the Sunday in the isoyearweek
+Returns the date of the Sunday that ends a given ISO yearweek.
+}
+\details{
+ISO weeks run Monday to Sunday, so the returned date is the Sunday of the
+supplied yearweek.
 }
 \examples{
 isoyearweek_to_last_date(c("2019-19", "2020-01"))

@@ -3,19 +3,32 @@
 \docType{data}
 \name{nor_workdays_by_isoyearweek}
 \alias{nor_workdays_by_isoyearweek}
-\title{Norwegian workdays and holidays by isoyearweek}
+\title{Norwegian workdays and holidays by ISO yearweek}
 \format{
+A \link[data.table:data.table]{data.table::data.table} with one row per ISO yearweek and the following
+columns:
 \describe{
-\item{isoyearweek}{YYYY-WW}
-\item{public_holiday}{The proportion of the days within the isoyearweek that are public holidays}
-\item{freeday}{The proportion of the days within the isoyearweek that are either public holidays or Saturday/Sunday}
-\item{workday}{1 minus freeday}
+\item{isoyearweek}{Character. ISO yearweek, "yyyy-ww".}
+\item{public_holiday}{The proportion of days in the ISO yearweek that are public holidays.}
+\item{freeday}{The proportion of days in the ISO yearweek that are public holidays or Saturday/Sunday.}
+\item{workday}{1 minus \code{freeday}.}
 }
+}
+\source{
+Aggregated from \link{nor_workdays_by_date}. See \verb{data-raw/1_gen-data.R}
+in the package source.
 }
 \usage{
 nor_workdays_by_isoyearweek
 }
 \description{
-Norwegian workdays and holidays by isoyearweek
+For each complete (7-day) ISO yearweek, the proportion of days that are
+public holidays, free days and workdays in Norway.
+}
+\examples{
+head(nor_workdays_by_isoyearweek)
+
+# ISO yearweeks that contain at least one public holiday
+head(nor_workdays_by_isoyearweek[nor_workdays_by_isoyearweek$public_holiday > 0, ])
 }
 \keyword{datasets}

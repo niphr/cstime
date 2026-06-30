@@ -2,19 +2,26 @@
 % Please edit documentation in R/conversion_season.R
 \name{isoyearweek_to_seasonweek_n}
 \alias{isoyearweek_to_seasonweek_n}
-\title{ISO yearweek to season week (numeric). Season week 1 is ISO week 35.}
+\title{ISO yearweek to season week (numeric)}
 \usage{
 isoyearweek_to_seasonweek_n(x)
 }
 \arguments{
-\item{x}{ISO yearweek}
+\item{x}{ISO yearweek as a character string of the form "yyyy-ww", e.g.
+"2021-01".}
 }
 \value{
-Season week in numeric
+Season week as a numeric vector.
 }
 \description{
-ISO yearweek to season week (numeric). Season week 1 is ISO week 35.
+Maps an ISO yearweek to its position within the surveillance season, where
+season week 1 corresponds to ISO week 35.
+}
+\details{
+The ISO week is extracted from the yearweek string and then converted with
+\code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}}, so the same season-week numbering and the 18.5
+half-step for ISO week 53 apply.
 }
 \examples{
-isoyearweek_to_seasonweek_n(c("2021-01"))
+isoyearweek_to_seasonweek_n(c("2021-01", "2021-35"))
 }

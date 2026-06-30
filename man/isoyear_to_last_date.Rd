@@ -5,7 +5,7 @@
 \alias{isoyear_to_last_date.default}
 \alias{isoyear_to_last_date.character}
 \alias{isoyear_to_last_date.numeric}
-\title{Last Sunday in ISO year}
+\title{ISO year to last date (Sunday)}
 \usage{
 isoyear_to_last_date(x)
 
@@ -16,14 +16,23 @@ isoyear_to_last_date(x)
 \method{isoyear_to_last_date}{numeric}(x)
 }
 \arguments{
-\item{x}{ISO year, e.g. 2020}
+\item{x}{ISO year as a number or character string, e.g. 2020 or "2020".}
 }
 \value{
-Date of the Sunday, for the last week in the isoyear
+A \link[base:Date]{base::Date} vector giving the last Sunday of each ISO year.
 }
 \description{
-Returns the last Sunday in the isoyear
+Returns the date of the Sunday that ends the last ISO week of a given ISO
+year.
+}
+\details{
+ISO weeks end on Sunday, so the returned date is the Sunday of the final ISO
+week. Because ISO years and calendar years are not aligned, this date can
+fall in early January of the following calendar year (for example the last
+date of ISO year 2020 is 2021-01-03). The year is accepted as either a number
+or a character string.
 }
 \examples{
-isoyear_to_last_date(c(2019, 2019, 2020, 2021))
+isoyear_to_last_date(c(2019, 2020, 2021))
+isoyear_to_last_date("2020")
 }

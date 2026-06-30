@@ -3,11 +3,13 @@
 \docType{data}
 \name{dates_by_isoyearweek}
 \alias{dates_by_isoyearweek}
-\title{Dates of different days within isoyearweeks}
+\title{Dates of each weekday within ISO yearweeks}
 \format{
+A \link[data.table:data.table]{data.table::data.table} with one row per ISO yearweek and the following
+columns:
 \describe{
-\item{isoyear}{Isoyear.}
-\item{isoyearweek}{Isoweek-isoyear.}
+\item{isoyear}{Integer. ISO year.}
+\item{isoyearweek}{Character. ISO yearweek, "yyyy-ww".}
 \item{mon}{Date of Monday.}
 \item{tue}{Date of Tuesday.}
 \item{wed}{Date of Wednesday.}
@@ -15,18 +17,28 @@
 \item{fri}{Date of Friday.}
 \item{sat}{Date of Saturday.}
 \item{sun}{Date of Sunday.}
-\item{weekdays}{List of dates from Mon-Fri}
-\item{weekend}{List of dates from Sat-Sun}
-\item{days}{List of dates from Mon-Sun}
+\item{weekdays}{List column. The dates Monday to Friday.}
+\item{weekend}{List column. The dates Saturday and Sunday.}
+\item{days}{List column. The dates Monday to Sunday.}
 }
+}
+\source{
+Generated from a daily date sequence using ISO 8601 week rules. See
+\verb{data-raw/1_gen-data.R} in the package source.
 }
 \usage{
 dates_by_isoyearweek
 }
 \description{
-Dates of different days within isoyearweeks
+A lookup table giving, for every ISO yearweek between 1900 and 2100, the date
+of each day of that week (Monday to Sunday) plus convenience list-columns
+that group those dates.
 }
 \examples{
+library(data.table)
+# Look up the Monday and Sunday of two ISO yearweeks
+dates_by_isoyearweek[isoyearweek \%in\% c("2021-01", "2021-02"), .(isoyearweek, mon, sun)]
+
 # Constructing a vector of dates without removing the Date class
 do.call("c", dates_by_isoyearweek[isoyearweek \%in\% c("2021-01", "2021-02")]$weekdays)
 }

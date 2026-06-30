@@ -1,13 +1,24 @@
-#' ISO year (character) from Date object
+#' Date to ISO year (character)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to its ISO 8601 week-based year, returned as a character
+#' string.
 #'
-#' @return ISO year in character
+#' @details
+#' The ISO 8601 week-based year is not always the same as the calendar year.
+#' ISO weeks run Monday to Sunday, and week 1 is the week containing the year's
+#' first Thursday. As a result the first days of January can belong to the last
+#' ISO week of the previous year, and the last days of December can belong to
+#' ISO week 1 of the following year. For example 2021-01-01 is a Friday that
+#' falls in ISO week 53 of ISO year 2020.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO year as a character vector (e.g. "2021").
 #' @export
 #'
 #' @examples
-#' date_to_isoyear_c("2021-08-11")
-#' date_to_isoyear_c(lubridate::today())
+#' date_to_isoyear_c(as.Date("2021-08-11"))
+#' date_to_isoyear_c("2021-01-01")
 date_to_isoyear_c <- function(x = lubridate::today()) {
   UseMethod("date_to_isoyear_c", x)
 }
@@ -30,16 +41,23 @@ date_to_isoyear_c.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoyear_c
 }
 
-#' ISO year (numeric) from Date object
+#' Date to ISO year (numeric)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to its ISO 8601 week-based year, returned as a number.
 #'
-#' @return ISO year in numeric
+#' @details
+#' The ISO 8601 week-based year can differ from the calendar year near the
+#' start and end of January and December. See [date_to_isoyear_c()] for the
+#' rules used to assign weeks and years.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO year as an integer vector (e.g. 2021).
 #' @export
 #'
 #' @examples
-#' date_to_isoyear_n("2021-08-11")
-#' date_to_isoyear_n(lubridate::today())
+#' date_to_isoyear_n(as.Date("2021-08-11"))
+#' date_to_isoyear_n("2021-01-01")
 date_to_isoyear_n <- function(x = lubridate::today()) {
   UseMethod("date_to_isoyear_n", x)
 }
@@ -62,16 +80,24 @@ date_to_isoyear_n.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoyear_n
 }
 
-#' ISO week (character) from Date object
+#' Date to ISO week (character)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to its ISO 8601 week number, returned as a zero-padded
+#' character string.
 #'
-#' @return ISO week in character
+#' @details
+#' ISO weeks run Monday to Sunday and are numbered 01 to 52 or 53. Week 01 is
+#' the week containing the first Thursday of the ISO year. The week is returned
+#' as two digits, e.g. "01" or "53".
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO week as a character vector (e.g. "32").
 #' @export
 #'
 #' @examples
-#' date_to_isoweek_c("2021-08-11")
-#' date_to_isoweek_c(lubridate::today())
+#' date_to_isoweek_c(as.Date("2021-08-11"))
+#' date_to_isoweek_c("2021-01-01")
 date_to_isoweek_c <- function(x = lubridate::today()) {
   UseMethod("date_to_isoweek_c", x)
 }
@@ -94,16 +120,22 @@ date_to_isoweek_c.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoweek_c
 }
 
-#' ISO week (numeric) from Date object
+#' Date to ISO week (numeric)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to its ISO 8601 week number, returned as a number.
 #'
-#' @return ISO week in numeric
+#' @details
+#' ISO weeks run Monday to Sunday and are numbered 1 to 52 or 53. Week 1 is the
+#' week containing the first Thursday of the ISO year.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO week as an integer vector (1 to 53).
 #' @export
 #'
 #' @examples
-#' date_to_isoweek_n("2021-08-11")
-#' date_to_isoweek_n(lubridate::today())
+#' date_to_isoweek_n(as.Date("2021-08-11"))
+#' date_to_isoweek_n("2021-01-01")
 date_to_isoweek_n <- function(x = lubridate::today()) {
   UseMethod("date_to_isoweek_n", x)
 }
@@ -126,16 +158,25 @@ date_to_isoweek_n.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoweek_n
 }
 
-#' ISO year and week (character) from Date object
+#' Date to ISO yearweek (character)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to a combined ISO 8601 year and week string of the form
+#' "yyyy-ww".
 #'
-#' @return ISO year and week in character
+#' @details
+#' The output combines the ISO year (see [date_to_isoyear_c()]) and the
+#' zero-padded ISO week (see [date_to_isoweek_c()]), separated by a hyphen, for
+#' example "2021-32". Because the ISO year can differ from the calendar year,
+#' 2021-01-01 maps to "2020-53".
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO yearweek as a character vector (e.g. "2021-32").
 #' @export
 #'
 #' @examples
-#' date_to_isoyearweek_c("2021-08-11")
-#' date_to_isoyearweek_c(lubridate::today())
+#' date_to_isoyearweek_c(as.Date("2021-08-11"))
+#' date_to_isoyearweek_c("2021-01-01")
 date_to_isoyearweek_c <- function(x = lubridate::today()) {
   UseMethod("date_to_isoyearweek_c", x)
 }
@@ -158,16 +199,24 @@ date_to_isoyearweek_c.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoyearweek_c
 }
 
-#' ISO quarter (numeric) from Date object
+#' Date to ISO quarter (numeric)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to an ISO-week-based quarter (1 to 4), returned as a number.
 #'
-#' @return ISO quarter in numeric
+#' @details
+#' The quarter is derived from the ISO week rather than the calendar month:
+#' weeks 1 to 13 are quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are
+#' quarter 3, and weeks 40 onwards (including week 53 in long ISO years) are
+#' quarter 4.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO quarter as an integer vector (1 to 4).
 #' @export
 #'
 #' @examples
-#' date_to_isoquarter_n("2021-08-11")
-#' date_to_isoquarter_n(lubridate::today())
+#' date_to_isoquarter_n(as.Date("2021-08-11"))
+#' date_to_isoquarter_n("2021-01-01")
 date_to_isoquarter_n <- function(x = lubridate::today()) {
   UseMethod("date_to_isoquarter_n", x)
 }
@@ -190,16 +239,23 @@ date_to_isoquarter_n.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoquarter_n
 }
 
-#' ISO quarter (character) from Date object
+#' Date to ISO quarter (character)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to an ISO-week-based quarter (1 to 4), returned as a
+#' character string.
 #'
-#' @return ISO quarter in character
+#' @details
+#' The quarter is derived from the ISO week. See [date_to_isoquarter_n()] for
+#' the week-to-quarter boundaries.
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO quarter as a character vector (e.g. "3").
 #' @export
 #'
 #' @examples
-#' date_to_isoquarter_c("2021-08-11")
-#' date_to_isoquarter_c(lubridate::today())
+#' date_to_isoquarter_c(as.Date("2021-08-11"))
+#' date_to_isoquarter_c("2021-01-01")
 date_to_isoquarter_c <- function(x = lubridate::today()) {
   UseMethod("date_to_isoquarter_c", x)
 }
@@ -222,16 +278,24 @@ date_to_isoquarter_c.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$isoquarter_c
 }
 
-#' ISO year and quarter (character) from Date object
+#' Date to ISO yearquarter (character)
 #'
-#' @param x a Date object or string, in the form of 'yyyy-mm-dd'
+#' Converts a date to a combined ISO year and quarter string of the form
+#' "yyyy-Qn".
 #'
-#' @return ISO year and quarter in character
+#' @details
+#' The output combines the ISO year (see [date_to_isoyear_c()]) and the
+#' ISO-week-based quarter (see [date_to_isoquarter_c()]), for example
+#' "2021-Q3".
+#'
+#' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
+#'
+#' @return ISO yearquarter as a character vector (e.g. "2021-Q3").
 #' @export
 #'
 #' @examples
-#' date_to_isoyearquarter_c("2021-08-11")
-#' date_to_isoyearquarter_c(lubridate::today())
+#' date_to_isoyearquarter_c(as.Date("2021-08-11"))
+#' date_to_isoyearquarter_c("2021-01-01")
 date_to_isoyearquarter_c <- function(x = lubridate::today()) {
   UseMethod("date_to_isoyearquarter_c", x)
 }
@@ -258,16 +322,22 @@ date_to_isoyearquarter_c.Date <- function(x = lubridate::today()) {
 # isoyearweek vs isoyear, isoweek, isoquarter ====
 #
 
-#' ISO yearweek to year (numeric)
+#' ISO yearweek to ISO year (numeric)
 #'
-#' This function breaks the string connected with '-' into year/week
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO year in numeric
+#' Extracts the ISO year from an ISO yearweek string and returns it as a number.
+#'
+#' @details
+#' The input is split on the hyphen into year and week, and the year part is
+#' returned. The week part is ignored.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO year as an integer vector (e.g. 2020).
 #' @rdname isoyearweek_to_isoyear_n
 #' @export
-#' 
-#' @examples 
-#' isoyearweek_to_isoyear_n('2020-10')
+#'
+#' @examples
+#' isoyearweek_to_isoyear_n("2020-10")
 isoyearweek_to_isoyear_n <- function(x) {
   UseMethod("isoyearweek_to_isoyear_n", x)
 }
@@ -284,15 +354,22 @@ isoyearweek_to_isoyear_n.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$isoyear_n
 }
 
-#' ISO yearweek to year (character)
+#' ISO yearweek to ISO year (character)
 #'
-#' This function breaks the string connected with '-' into year/week
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO year in character
+#' Extracts the ISO year from an ISO yearweek string and returns it as a
+#' character string.
+#'
+#' @details
+#' The input is split on the hyphen into year and week, and the year part is
+#' returned. The week part is ignored.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO year as a character vector (e.g. "2020").
 #' @rdname isoyearweek_to_isoyear_c
 #' @export
-#' @examples 
-#' isoyearweek_to_isoyear_c('2020-10')
+#' @examples
+#' isoyearweek_to_isoyear_c("2020-10")
 isoyearweek_to_isoyear_c <- function(x) {
   UseMethod("isoyearweek_to_isoyear_c", x)
 }
@@ -309,15 +386,21 @@ isoyearweek_to_isoyear_c.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$isoyear_c
 }
 
-#' ISO yearweek to week (numeric)
+#' ISO yearweek to ISO week (numeric)
 #'
-#' This function breaks the string connected with '-' into year/week
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO week in numeric
+#' Extracts the ISO week from an ISO yearweek string and returns it as a number.
+#'
+#' @details
+#' The input is split on the hyphen into year and week, and the week part is
+#' returned. The year part is ignored.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO week as an integer vector (1 to 53).
 #' @rdname isoyearweek_to_isoweek_n
 #' @export
-#' @examples 
-#' isoyearweek_to_isoweek_n('2020-19')
+#' @examples
+#' isoyearweek_to_isoweek_n("2020-19")
 isoyearweek_to_isoweek_n <- function(x) {
   UseMethod("isoyearweek_to_isoweek_n", x)
 }
@@ -334,15 +417,22 @@ isoyearweek_to_isoweek_n.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$isoweek_n
 }
 
-#' ISO yearweek to week (character)
+#' ISO yearweek to ISO week (character)
 #'
-#' This function breaks the string connected with '-' into year/week
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO week in character
+#' Extracts the ISO week from an ISO yearweek string and returns it as a
+#' character string.
+#'
+#' @details
+#' The input is split on the hyphen into year and week, and the week part is
+#' returned. The year part is ignored.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO week as a character vector (e.g. "19").
 #' @rdname isoyearweek_to_isoweek_c
 #' @export
-#' @examples 
-#' isoyearweek_to_isoweek_c('2020-19')
+#' @examples
+#' isoyearweek_to_isoweek_c("2020-19")
 isoyearweek_to_isoweek_c <- function(x) {
   UseMethod("isoyearweek_to_isoweek_c", x)
 }
@@ -359,15 +449,23 @@ isoyearweek_to_isoweek_c.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$isoweek_c
 }
 
-#' ISO yearweek to quarter (numeric)
+#' ISO yearweek to ISO quarter (numeric)
 #'
-#' This function breaks the string connected with '-' into year/quarter
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO quarter in numeric
+#' Maps an ISO yearweek to its ISO-week-based quarter (1 to 4), returned as a
+#' number.
+#'
+#' @details
+#' The quarter is derived from the ISO week part of the input. Weeks 1 to 13 are
+#' quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are quarter 3, and
+#' weeks 40 onwards (including week 53) are quarter 4.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO quarter as an integer vector (1 to 4).
 #' @rdname isoyearweek_to_isoquarter_n
 #' @export
-#' @examples 
-#' isoyearweek_to_isoquarter_n('2020-19')
+#' @examples
+#' isoyearweek_to_isoquarter_n("2020-19")
 isoyearweek_to_isoquarter_n <- function(x) {
   UseMethod("isoyearweek_to_isoquarter_n", x)
 }
@@ -384,15 +482,22 @@ isoyearweek_to_isoquarter_n.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$isoquarter_n
 }
 
-#' ISO yearweek to quarter (character)
+#' ISO yearweek to ISO quarter (character)
 #'
-#' This function breaks the string connected with '-' into year/quarter
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO quarter in character
+#' Maps an ISO yearweek to its ISO-week-based quarter (1 to 4), returned as a
+#' character string.
+#'
+#' @details
+#' The quarter is derived from the ISO week part of the input. See
+#' [isoyearweek_to_isoquarter_n()] for the week-to-quarter boundaries.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO quarter as a character vector (e.g. "2").
 #' @rdname isoyearweek_to_isoquarter_c
 #' @export
-#' @examples 
-#' isoyearweek_to_isoquarter_c('2020-19')
+#' @examples
+#' isoyearweek_to_isoquarter_c("2020-19")
 isoyearweek_to_isoquarter_c <- function(x) {
   UseMethod("isoyearweek_to_isoquarter_c", x)
 }
@@ -411,12 +516,20 @@ isoyearweek_to_isoquarter_c.character <- function(x) {
 
 #' ISO yearweek to ISO yearquarter (character)
 #'
-#' @param x Year-week, e.g. "2020-19" for 19th week in 2020
-#' @return ISO yearquarter in character
+#' Maps an ISO yearweek to a combined ISO year and quarter string of the form
+#' "yyyy-Qn".
+#'
+#' @details
+#' The output keeps the year part of the input and appends the ISO-week-based
+#' quarter (see [isoyearweek_to_isoquarter_c()]), for example "2020-Q2".
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return ISO yearquarter as a character vector (e.g. "2020-Q2").
 #' @rdname isoyearweek_to_isoyearquarter_c
 #' @export
-#' @examples 
-#' isoyearweek_to_isoyearquarter_c('2020-19')
+#' @examples
+#' isoyearweek_to_isoyearquarter_c("2020-19")
 isoyearweek_to_isoyearquarter_c <- function(x) {
   UseMethod("isoyearweek_to_isoyearquarter_c", x)
 }
@@ -437,14 +550,21 @@ isoyearweek_to_isoyearquarter_c.character <- function(x) {
 # Downsizing (isoyear -> isoyearweek/date -> date) ====
 #
 
-#' Last ISO yearweek (character) in ISO year
+#' ISO year to last ISO yearweek (character)
 #'
-#' Returns the last isoyearweek in the isoyear
-#' @param x ISO year, e.g. 2020
-#' @return ISO year-week in character, of the last ISO year
+#' Returns the last ISO yearweek of a given ISO year as a "yyyy-ww" string.
+#'
+#' @details
+#' Most ISO years have 52 weeks, so the result is usually "yyyy-52". ISO years
+#' that contain 53 weeks (such as 2020) instead return "yyyy-53". The year is
+#' accepted as either a number or a character string.
+#'
+#' @param x ISO year as a number or character string, e.g. 2020 or "2020".
+#' @return Last ISO yearweek of the year as a character vector (e.g. "2020-53").
 #' @rdname isoyear_to_last_isoyearweek_c
 #' @examples
-#' isoyear_to_last_isoyearweek_c(c(2019, 2019, 2020, 2021))
+#' isoyear_to_last_isoyearweek_c(c(2019, 2020, 2021))
+#' isoyear_to_last_isoyearweek_c("2020")
 #' @export
 isoyear_to_last_isoyearweek_c <- function(x) {
   UseMethod("isoyear_to_last_isoyearweek_c", x)
@@ -468,14 +588,21 @@ isoyear_to_last_isoyearweek_c.numeric <- function(x) {
   conversions_isoyear_n_to[.(x)]$last_isoyearweek_c
 }
 
-#' Last ISO week (numeric) in ISO year
+#' ISO year to last ISO week (numeric)
 #'
-#' Returns the last week in the isoyear
-#' @param x ISO year, e.g. 2020
-#' @return ISO week in numeric
+#' Returns the number of the last ISO week in a given ISO year, that is, the
+#' count of ISO weeks in that year.
+#'
+#' @details
+#' This is 52 for most years and 53 for long ISO years such as 2020. The year is
+#' accepted as either a number or a character string.
+#'
+#' @param x ISO year as a number or character string, e.g. 2020 or "2020".
+#' @return Last ISO week of the year as an integer vector (52 or 53).
 #' @rdname isoyear_to_last_isoweek_n
 #' @examples
-#' isoyear_to_last_isoweek_n(c(2019, 2019, 2020, 2021))
+#' isoyear_to_last_isoweek_n(c(2019, 2020, 2021))
+#' isoyear_to_last_isoweek_n("2020")
 #' @export
 isoyear_to_last_isoweek_n <- function(x) {
   UseMethod("isoyear_to_last_isoweek_n", x)
@@ -499,14 +626,24 @@ isoyear_to_last_isoweek_n.numeric <- function(x) {
   conversions_isoyear_n_to[.(x)]$last_isoweek_n
 }
 
-#' Last Sunday in ISO year
+#' ISO year to last date (Sunday)
 #'
-#' Returns the last Sunday in the isoyear
-#' @param x ISO year, e.g. 2020
-#' @return Date of the Sunday, for the last week in the isoyear
+#' Returns the date of the Sunday that ends the last ISO week of a given ISO
+#' year.
+#'
+#' @details
+#' ISO weeks end on Sunday, so the returned date is the Sunday of the final ISO
+#' week. Because ISO years and calendar years are not aligned, this date can
+#' fall in early January of the following calendar year (for example the last
+#' date of ISO year 2020 is 2021-01-03). The year is accepted as either a number
+#' or a character string.
+#'
+#' @param x ISO year as a number or character string, e.g. 2020 or "2020".
+#' @return A [base::Date] vector giving the last Sunday of each ISO year.
 #' @rdname isoyear_to_last_date
 #' @examples
-#' isoyear_to_last_date(c(2019, 2019, 2020, 2021))
+#' isoyear_to_last_date(c(2019, 2020, 2021))
+#' isoyear_to_last_date("2020")
 #' @export
 isoyear_to_last_date <- function(x) {
   UseMethod("isoyear_to_last_date", x)
@@ -530,11 +667,17 @@ isoyear_to_last_date.numeric <- function(x) {
   conversions_isoyear_n_to[.(x)]$last_date
 }
 
-#' Last date in ISO yearweek
+#' ISO yearweek to last date (Sunday)
 #'
-#' Returns the Sunday in the isoyearweek
-#' @param x ISO yearweek, e.g. "2020-19" for 19th week in 2020
-#' @return Date of Sunday of that isoyearweek
+#' Returns the date of the Sunday that ends a given ISO yearweek.
+#'
+#' @details
+#' ISO weeks run Monday to Sunday, so the returned date is the Sunday of the
+#' supplied yearweek.
+#'
+#' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
+#'   "2020-19" for the 19th ISO week of 2020.
+#' @return A [base::Date] vector giving the Sunday of each ISO yearweek.
 #' @rdname isoyearweek_to_last_date
 #' @examples
 #' isoyearweek_to_last_date(c("2019-19", "2020-01"))
@@ -555,14 +698,22 @@ isoyearweek_to_last_date.character <- function(x) {
   conversions_isoyearweek_to[.(x)]$last_date
 }
 
-#' Last date in season
+#' Season to last date (Sunday)
 #'
-#' Returns the last Sunday in the season
-#' @param x Season, e.g. "2019/2020"
-#' @return Date of last Sunday of that season
+#' Returns the date of the Sunday that ends a given season.
+#'
+#' @details
+#' A season is written "yyyy/yyyy" where the two years are consecutive (for
+#' example "2019/2020"). Seasons are aligned to ISO weeks, with season week 1
+#' starting at ISO week 35; the season therefore ends in late summer of the
+#' second year. The returned date is the Sunday of the final week of the season.
+#'
+#' @param x Season as a character string of the form "yyyy/yyyy", e.g.
+#'   "2019/2020".
+#' @return A [base::Date] vector giving the last Sunday of each season.
 #' @rdname season_to_last_date
 #' @examples
-#' isoyearweek_to_last_date(c("2019-19", "2020-01"))
+#' season_to_last_date(c("2019/2020", "2020/2021"))
 #' @export
 season_to_last_date <- function(x) {
   UseMethod("season_to_last_date", x)

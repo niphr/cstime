@@ -5,7 +5,7 @@
 \alias{isoyear_to_last_isoyearweek_c.default}
 \alias{isoyear_to_last_isoyearweek_c.character}
 \alias{isoyear_to_last_isoyearweek_c.numeric}
-\title{Last ISO yearweek (character) in ISO year}
+\title{ISO year to last ISO yearweek (character)}
 \usage{
 isoyear_to_last_isoyearweek_c(x)
 
@@ -16,14 +16,20 @@ isoyear_to_last_isoyearweek_c(x)
 \method{isoyear_to_last_isoyearweek_c}{numeric}(x)
 }
 \arguments{
-\item{x}{ISO year, e.g. 2020}
+\item{x}{ISO year as a number or character string, e.g. 2020 or "2020".}
 }
 \value{
-ISO year-week in character, of the last ISO year
+Last ISO yearweek of the year as a character vector (e.g. "2020-53").
 }
 \description{
-Returns the last isoyearweek in the isoyear
+Returns the last ISO yearweek of a given ISO year as a "yyyy-ww" string.
+}
+\details{
+Most ISO years have 52 weeks, so the result is usually "yyyy-52". ISO years
+that contain 53 weeks (such as 2020) instead return "yyyy-53". The year is
+accepted as either a number or a character string.
 }
 \examples{
-isoyear_to_last_isoyearweek_c(c(2019, 2019, 2020, 2021))
+isoyear_to_last_isoyearweek_c(c(2019, 2020, 2021))
+isoyear_to_last_isoyearweek_c("2020")
 }

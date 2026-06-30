@@ -7,8 +7,21 @@
 now_c(format = "\%Y-\%m-\%d \%H:\%M:\%S")
 }
 \arguments{
-\item{format}{Defaults to \%Y-\%m-\%d \%H:\%M:\%S}
+\item{format}{A format string passed to \code{\link[base:format]{base::format()}}. Defaults to
+"\%Y-\%m-\%d \%H:\%M:\%S".}
+}
+\value{
+The current time as a single character string.
 }
 \description{
-Current time as character
+Returns the current system time formatted as a character string.
+}
+\details{
+The current time is taken from \code{\link[base:Sys.time]{base::Sys.time()}} and formatted with the
+supplied \code{format} string, which uses the conversion codes documented in
+\code{\link[base:strptime]{base::strptime()}}.
+}
+\examples{
+now_c()
+now_c(format = "\%Y-\%m-\%d")
 }

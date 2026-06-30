@@ -4,7 +4,7 @@
 \alias{isoyearweek_to_isoquarter_n}
 \alias{isoyearweek_to_isoquarter_n.default}
 \alias{isoyearweek_to_isoquarter_n.character}
-\title{ISO yearweek to quarter (numeric)}
+\title{ISO yearweek to ISO quarter (numeric)}
 \usage{
 isoyearweek_to_isoquarter_n(x)
 
@@ -13,14 +13,21 @@ isoyearweek_to_isoquarter_n(x)
 \method{isoyearweek_to_isoquarter_n}{character}(x)
 }
 \arguments{
-\item{x}{Year-week, e.g. "2020-19" for 19th week in 2020}
+\item{x}{ISO yearweek as a character string of the form "yyyy-ww", e.g.
+"2020-19" for the 19th ISO week of 2020.}
 }
 \value{
-ISO quarter in numeric
+ISO quarter as an integer vector (1 to 4).
 }
 \description{
-This function breaks the string connected with '-' into year/quarter
+Maps an ISO yearweek to its ISO-week-based quarter (1 to 4), returned as a
+number.
+}
+\details{
+The quarter is derived from the ISO week part of the input. Weeks 1 to 13 are
+quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are quarter 3, and
+weeks 40 onwards (including week 53) are quarter 4.
 }
 \examples{
-isoyearweek_to_isoquarter_n('2020-19')
+isoyearweek_to_isoquarter_n("2020-19")
 }

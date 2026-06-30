@@ -5,7 +5,7 @@
 \alias{date_to_calmonth_n.default}
 \alias{date_to_calmonth_n.character}
 \alias{date_to_calmonth_n.Date}
-\title{Date -> calmonth (numeric)}
+\title{Date to calendar month (numeric)}
 \usage{
 date_to_calmonth_n(x = lubridate::today())
 
@@ -16,15 +16,16 @@ date_to_calmonth_n(x = lubridate::today())
 \method{date_to_calmonth_n}{Date}(x = lubridate::today())
 }
 \arguments{
-\item{x}{a Date object or string, in the form of 'yyyy-mm-dd'}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-calmonth
+Calendar month as an integer vector (1 for January to 12 for
+December).
 }
 \description{
-Date -> calmonth (numeric)
+Converts a date to its calendar month number, returned as a number.
 }
 \examples{
-date_to_calmonth_n("2021-08-11")
-date_to_calmonth_n(lubridate::today())
+date_to_calmonth_n(as.Date("2021-08-11"))
+date_to_calmonth_n("2021-01-01")
 }

@@ -5,7 +5,7 @@
 \alias{date_to_calyear_n.default}
 \alias{date_to_calyear_n.character}
 \alias{date_to_calyear_n.Date}
-\title{Date -> calyear (numeric)}
+\title{Date to calendar year (numeric)}
 \usage{
 date_to_calyear_n(x = lubridate::today())
 
@@ -16,15 +16,19 @@ date_to_calyear_n(x = lubridate::today())
 \method{date_to_calyear_n}{Date}(x = lubridate::today())
 }
 \arguments{
-\item{x}{a Date object or string, in the form of 'yyyy-mm-dd'}
+\item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-ISO year in character
+Calendar year as an integer vector (e.g. 2021).
 }
 \description{
-Date -> calyear (numeric)
+Converts a date to its calendar (Gregorian) year, returned as a number.
+}
+\details{
+Unlike the ISO year (see \code{\link[=date_to_isoyear_n]{date_to_isoyear_n()}}), the calendar year is taken
+directly from the date, so 2021-01-01 is calendar year 2021.
 }
 \examples{
-date_to_calyear_n("2021-08-11")
-date_to_calyear_n(lubridate::today())
+date_to_calyear_n(as.Date("2021-08-11"))
+date_to_calyear_n("2021-01-01")
 }
