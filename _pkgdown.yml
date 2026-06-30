@@ -17,6 +17,74 @@ template:
           text: "Browse the reference →"
           href: "reference/index.html"
 
+reference:
+  - title: "Date to calendar units"
+    desc: "Convert a date to calendar month, year, or yearmonth."
+    contents:
+      - date_to_calmonth_c
+      - date_to_calmonth_n
+      - date_to_calyear_c
+      - date_to_calyear_n
+      - date_to_calyearmonth_c
+
+  - title: "Date to ISO units"
+    desc: "Convert a date to ISO week, year, quarter, yearweek, or yearquarter."
+    contents:
+      - date_to_isoweek_c
+      - date_to_isoweek_n
+      - date_to_isoyear_c
+      - date_to_isoyear_n
+      - date_to_isoquarter_c
+      - date_to_isoquarter_n
+      - date_to_isoyearweek_c
+      - date_to_isoyearquarter_c
+
+  - title: "Date to season"
+    desc: "Convert a date to season or season week."
+    contents:
+      - date_to_season_c
+      - date_to_seasonweek_n
+
+  - title: "ISO yearweek and ISO year conversions"
+    desc: "Convert between ISO yearweek, ISO year, ISO quarter, season, and dates."
+    contents:
+      - isoyear_to_last_date
+      - isoyear_to_last_isoweek_n
+      - isoyear_to_last_isoyearweek_c
+      - isoyearweek_to_isoweek_c
+      - isoyearweek_to_isoweek_n
+      - isoyearweek_to_isoyear_c
+      - isoyearweek_to_isoyear_n
+      - isoyearweek_to_isoquarter_c
+      - isoyearweek_to_isoquarter_n
+      - isoyearweek_to_isoyearquarter_c
+      - isoyearweek_to_last_date
+      - isoyearweek_to_season_c
+      - isoyearweek_to_seasonweek_n
+      - isoweek_to_seasonweek_n
+
+  - title: "Season conversions"
+    desc: "Convert between season, season week, ISO week, and dates."
+    contents:
+      - season_to_last_date
+      - seasonweek_to_isoweek_c
+      - seasonweek_to_isoweek_n
+
+  - title: "Lookup datasets"
+    desc: "Reference datasets for ISO yearweeks and Norwegian workdays."
+    contents:
+      - dates_by_isoyearweek
+      - nor_workdays_by_date
+      - nor_workdays_by_isoyearweek
+
+  - title: "Utilities"
+    desc: "Helper functions for filtering dates and retrieving the current time."
+    contents:
+      - keep_sundays
+      - keep_sundays_and_latest_date
+      - keep_sundays_and_latest_date_internal
+      - now_c
+
 authors:
   footer:
     roles: [cre, aut]
