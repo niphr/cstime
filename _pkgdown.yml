@@ -2,6 +2,20 @@ url: https://niphr.github.io/cstime/
 
 template:
   package: cstemplate
+  params:
+    hero:
+      overline: "R package · Weeks & dates"
+      title: "Time functions for public health."
+      lede: >
+        Easy, consistent time conversion for public health — between date, ISO week,
+        ISO yearweek, ISO year, calendar month and year, and season week.
+      cta:
+        primary:
+          text: "Get started"
+          href: "articles/cstime.html"
+        secondary:
+          text: "Browse the reference →"
+          href: "reference/index.html"
 
 authors:
   footer:
