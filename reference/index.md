@@ -1,6 +1,8 @@
 # Package index
 
-## All functions
+## Date to calendar units
+
+Convert a date to calendar month, year, or yearmonth.
 
 - [`date_to_calmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calmonth_c.md)
   : Date to calendar month (character)
@@ -12,10 +14,11 @@
   : Date to calendar year (numeric)
 - [`date_to_calyearmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calyearmonth_c.md)
   : Date to calendar yearmonth (character)
-- [`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md)
-  : Date to ISO quarter (character)
-- [`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md)
-  : Date to ISO quarter (numeric)
+
+## Date to ISO units
+
+Convert a date to ISO week, year, quarter, yearweek, or yearquarter.
+
 - [`date_to_isoweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoweek_c.md)
   : Date to ISO week (character)
 - [`date_to_isoweek_n()`](https://niphr.github.io/cstime/reference/date_to_isoweek_n.md)
@@ -24,28 +27,34 @@
   : Date to ISO year (character)
 - [`date_to_isoyear_n()`](https://niphr.github.io/cstime/reference/date_to_isoyear_n.md)
   : Date to ISO year (numeric)
-- [`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md)
-  : Date to ISO yearquarter (character)
+- [`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md)
+  : Date to ISO quarter (character)
+- [`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md)
+  : Date to ISO quarter (numeric)
 - [`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
   : Date to ISO yearweek (character)
+- [`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md)
+  : Date to ISO yearquarter (character)
+
+## Date to season
+
+Convert a date to season or season week.
+
 - [`date_to_season_c()`](https://niphr.github.io/cstime/reference/date_to_season_c.md)
   : Date to season (character)
 - [`date_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/date_to_seasonweek_n.md)
   : Date to season week (numeric)
-- [`dates_by_isoyearweek`](https://niphr.github.io/cstime/reference/dates_by_isoyearweek.md)
-  : Dates of each weekday within ISO yearweeks
-- [`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md)
-  : ISO week to season week (numeric)
+
+## ISO yearweek and ISO year conversions
+
+Convert between ISO yearweek, ISO year, ISO quarter, season, and dates.
+
 - [`isoyear_to_last_date()`](https://niphr.github.io/cstime/reference/isoyear_to_last_date.md)
   : ISO year to last date (Sunday)
 - [`isoyear_to_last_isoweek_n()`](https://niphr.github.io/cstime/reference/isoyear_to_last_isoweek_n.md)
   : ISO year to last ISO week (numeric)
 - [`isoyear_to_last_isoyearweek_c()`](https://niphr.github.io/cstime/reference/isoyear_to_last_isoyearweek_c.md)
   : ISO year to last ISO yearweek (character)
-- [`isoyearweek_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_c.md)
-  : ISO yearweek to ISO quarter (character)
-- [`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md)
-  : ISO yearweek to ISO quarter (numeric)
 - [`isoyearweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_c.md)
   : ISO yearweek to ISO week (character)
 - [`isoyearweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_n.md)
@@ -54,6 +63,10 @@
   : ISO yearweek to ISO year (character)
 - [`isoyearweek_to_isoyear_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyear_n.md)
   : ISO yearweek to ISO year (numeric)
+- [`isoyearweek_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_c.md)
+  : ISO yearweek to ISO quarter (character)
+- [`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md)
+  : ISO yearweek to ISO quarter (numeric)
 - [`isoyearweek_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyearquarter_c.md)
   : ISO yearweek to ISO yearquarter (character)
 - [`isoyearweek_to_last_date()`](https://niphr.github.io/cstime/reference/isoyearweek_to_last_date.md)
@@ -62,21 +75,40 @@
   : ISO yearweek to season (character)
 - [`isoyearweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_seasonweek_n.md)
   : ISO yearweek to season week (numeric)
-- [`keep_sundays()`](https://niphr.github.io/cstime/reference/keep_sundays.md)
-  : keep_sundays
-- [`keep_sundays_and_latest_date()`](https://niphr.github.io/cstime/reference/keep_sundays_and_latest_date.md)
-  : keep_sundays_and_latest_date
-- [`keep_sundays_and_latest_date_internal()`](https://niphr.github.io/cstime/reference/keep_sundays_and_latest_date_internal.md)
-  : keep_sundays_and_latest_date_internal
-- [`nor_workdays_by_date`](https://niphr.github.io/cstime/reference/nor_workdays_by_date.md)
-  : Norwegian workdays and holidays by date
-- [`nor_workdays_by_isoyearweek`](https://niphr.github.io/cstime/reference/nor_workdays_by_isoyearweek.md)
-  : Norwegian workdays and holidays by ISO yearweek
-- [`now_c()`](https://niphr.github.io/cstime/reference/now_c.md) :
-  Current time as character
+- [`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md)
+  : ISO week to season week (numeric)
+
+## Season conversions
+
+Convert between season, season week, ISO week, and dates.
+
 - [`season_to_last_date()`](https://niphr.github.io/cstime/reference/season_to_last_date.md)
   : Season to last date (Sunday)
 - [`seasonweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_c.md)
   : Season week to ISO week (character)
 - [`seasonweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_n.md)
   : Season week to ISO week (numeric)
+
+## Lookup datasets
+
+Reference datasets for ISO yearweeks and Norwegian workdays.
+
+- [`dates_by_isoyearweek`](https://niphr.github.io/cstime/reference/dates_by_isoyearweek.md)
+  : Dates of each weekday within ISO yearweeks
+- [`nor_workdays_by_date`](https://niphr.github.io/cstime/reference/nor_workdays_by_date.md)
+  : Norwegian workdays and holidays by date
+- [`nor_workdays_by_isoyearweek`](https://niphr.github.io/cstime/reference/nor_workdays_by_isoyearweek.md)
+  : Norwegian workdays and holidays by ISO yearweek
+
+## Utilities
+
+Helper functions for filtering dates and retrieving the current time.
+
+- [`keep_sundays()`](https://niphr.github.io/cstime/reference/keep_sundays.md)
+  : keep_sundays
+- [`keep_sundays_and_latest_date()`](https://niphr.github.io/cstime/reference/keep_sundays_and_latest_date.md)
+  : keep_sundays_and_latest_date
+- [`keep_sundays_and_latest_date_internal()`](https://niphr.github.io/cstime/reference/keep_sundays_and_latest_date_internal.md)
+  : keep_sundays_and_latest_date_internal
+- [`now_c()`](https://niphr.github.io/cstime/reference/now_c.md) :
+  Current time as character
