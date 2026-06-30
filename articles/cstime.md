@@ -11,7 +11,7 @@ The core functionality is consistent time conversion between :
 It also provides functions to generate rolling dates for computing the
 weekly, bi-weekly, 4 week averages.
 
-`cstime` is part of the [csverse](https://www.csids.no/packages.html)
+`cstime` is part of the [csverse](https://niphr.github.io/packages.html)
 package suite.
 
 ``` r
