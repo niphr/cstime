@@ -1,6 +1,7 @@
-# ISO year (character) from Date object
+# Date to ISO year (character)
 
-ISO year (character) from Date object
+Converts a date to its ISO 8601 week-based year, returned as a character
+string.
 
 ## Usage
 
@@ -21,17 +22,26 @@ date_to_isoyear_c(x = lubridate::today())
 
 - x:
 
-  a Date object or string, in the form of 'yyyy-mm-dd'
+  A Date object, or a character string in the format 'yyyy-mm-dd'.
 
 ## Value
 
-ISO year in character
+ISO year as a character vector (e.g. "2021").
+
+## Details
+
+The ISO 8601 week-based year is not always the same as the calendar
+year. ISO weeks run Monday to Sunday, and week 1 is the week containing
+the year's first Thursday. As a result the first days of January can
+belong to the last ISO week of the previous year, and the last days of
+December can belong to ISO week 1 of the following year. For example
+2021-01-01 is a Friday that falls in ISO week 53 of ISO year 2020.
 
 ## Examples
 
 ``` r
-date_to_isoyear_c("2021-08-11")
+date_to_isoyear_c(as.Date("2021-08-11"))
 #> [1] "2021"
-date_to_isoyear_c(lubridate::today())
-#> [1] "2026"
+date_to_isoyear_c("2021-01-01")
+#> [1] "2020"
 ```

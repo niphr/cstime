@@ -1,6 +1,8 @@
-# Season week to ISO week (character). Season week 1 is ISO week 35.
+# Season week to ISO week (character)
 
-Season week to ISO week (character). Season week 1 is ISO week 35.
+Maps a season week number back to its ISO week, returned as a
+zero-padded character string. This is the inverse of
+[`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md).
 
 ## Usage
 
@@ -18,15 +20,23 @@ seasonweek_to_isoweek_c(x)
 
 - x:
 
-  Season week in a year (numeric), between 1 and 52
+  Season week as a number between 1 and 52.
 
 ## Value
 
-ISO week in character
+ISO week as a character vector (e.g. "35").
+
+## Details
+
+Season week 1 corresponds to ISO week 35, season week 2 to ISO week 36,
+and so on, wrapping around the new year. The ISO week is returned as two
+digits, e.g. "35" or "01".
 
 ## Examples
 
 ``` r
-seasonweek_to_isoweek_c(31)
-#> [1] "13"
+seasonweek_to_isoweek_c(1)
+#> [1] "35"
+seasonweek_to_isoweek_c(c(31, 52))
+#> [1] "13" "34"
 ```

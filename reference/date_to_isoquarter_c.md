@@ -1,6 +1,7 @@
-# ISO quarter (character) from Date object
+# Date to ISO quarter (character)
 
-ISO quarter (character) from Date object
+Converts a date to an ISO-week-based quarter (1 to 4), returned as a
+character string.
 
 ## Usage
 
@@ -21,17 +22,23 @@ date_to_isoquarter_c(x = lubridate::today())
 
 - x:
 
-  a Date object or string, in the form of 'yyyy-mm-dd'
+  A Date object, or a character string in the format 'yyyy-mm-dd'.
 
 ## Value
 
-ISO quarter in character
+ISO quarter as a character vector (e.g. "3").
+
+## Details
+
+The quarter is derived from the ISO week. See
+[`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md)
+for the week-to-quarter boundaries.
 
 ## Examples
 
 ``` r
-date_to_isoquarter_c("2021-08-11")
+date_to_isoquarter_c(as.Date("2021-08-11"))
 #> [1] "3"
-date_to_isoquarter_c(lubridate::today())
-#> [1] "3"
+date_to_isoquarter_c("2021-01-01")
+#> [1] "4"
 ```

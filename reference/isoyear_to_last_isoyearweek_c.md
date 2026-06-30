@@ -1,6 +1,6 @@
-# Last ISO yearweek (character) in ISO year
+# ISO year to last ISO yearweek (character)
 
-Returns the last isoyearweek in the isoyear
+Returns the last ISO yearweek of a given ISO year as a "yyyy-ww" string.
 
 ## Usage
 
@@ -21,15 +21,23 @@ isoyear_to_last_isoyearweek_c(x)
 
 - x:
 
-  ISO year, e.g. 2020
+  ISO year as a number or character string, e.g. 2020 or "2020".
 
 ## Value
 
-ISO year-week in character, of the last ISO year
+Last ISO yearweek of the year as a character vector (e.g. "2020-53").
+
+## Details
+
+Most ISO years have 52 weeks, so the result is usually "yyyy-52". ISO
+years that contain 53 weeks (such as 2020) instead return "yyyy-53". The
+year is accepted as either a number or a character string.
 
 ## Examples
 
 ``` r
-isoyear_to_last_isoyearweek_c(c(2019, 2019, 2020, 2021))
-#> [1] "2019-52" "2019-52" "2020-53" "2021-52"
+isoyear_to_last_isoyearweek_c(c(2019, 2020, 2021))
+#> [1] "2019-52" "2020-53" "2021-52"
+isoyear_to_last_isoyearweek_c("2020")
+#> [1] "2020-53"
 ```

@@ -1,6 +1,7 @@
-# ISO quarter (numeric) from Date object
+# Date to ISO quarter (numeric)
 
-ISO quarter (numeric) from Date object
+Converts a date to an ISO-week-based quarter (1 to 4), returned as a
+number.
 
 ## Usage
 
@@ -21,17 +22,24 @@ date_to_isoquarter_n(x = lubridate::today())
 
 - x:
 
-  a Date object or string, in the form of 'yyyy-mm-dd'
+  A Date object, or a character string in the format 'yyyy-mm-dd'.
 
 ## Value
 
-ISO quarter in numeric
+ISO quarter as an integer vector (1 to 4).
+
+## Details
+
+The quarter is derived from the ISO week rather than the calendar month:
+weeks 1 to 13 are quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to
+39 are quarter 3, and weeks 40 onwards (including week 53 in long ISO
+years) are quarter 4.
 
 ## Examples
 
 ``` r
-date_to_isoquarter_n("2021-08-11")
+date_to_isoquarter_n(as.Date("2021-08-11"))
 #> [1] 3
-date_to_isoquarter_n(lubridate::today())
-#> [1] 3
+date_to_isoquarter_n("2021-01-01")
+#> [1] 4
 ```

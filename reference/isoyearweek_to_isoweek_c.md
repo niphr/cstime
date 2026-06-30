@@ -1,6 +1,7 @@
-# ISO yearweek to week (character)
+# ISO yearweek to ISO week (character)
 
-This function breaks the string connected with '-' into year/week
+Extracts the ISO week from an ISO yearweek string and returns it as a
+character string.
 
 ## Usage
 
@@ -18,15 +19,21 @@ isoyearweek_to_isoweek_c(x)
 
 - x:
 
-  Year-week, e.g. "2020-19" for 19th week in 2020
+  ISO yearweek as a character string of the form "yyyy-ww", e.g.
+  "2020-19" for the 19th ISO week of 2020.
 
 ## Value
 
-ISO week in character
+ISO week as a character vector (e.g. "19").
+
+## Details
+
+The input is split on the hyphen into year and week, and the week part
+is returned. The year part is ignored.
 
 ## Examples
 
 ``` r
-isoyearweek_to_isoweek_c('2020-19')
+isoyearweek_to_isoweek_c("2020-19")
 #> [1] "19"
 ```

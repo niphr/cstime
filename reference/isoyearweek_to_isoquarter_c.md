@@ -1,6 +1,7 @@
-# ISO yearweek to quarter (character)
+# ISO yearweek to ISO quarter (character)
 
-This function breaks the string connected with '-' into year/quarter
+Maps an ISO yearweek to its ISO-week-based quarter (1 to 4), returned as
+a character string.
 
 ## Usage
 
@@ -18,15 +19,22 @@ isoyearweek_to_isoquarter_c(x)
 
 - x:
 
-  Year-week, e.g. "2020-19" for 19th week in 2020
+  ISO yearweek as a character string of the form "yyyy-ww", e.g.
+  "2020-19" for the 19th ISO week of 2020.
 
 ## Value
 
-ISO quarter in character
+ISO quarter as a character vector (e.g. "2").
+
+## Details
+
+The quarter is derived from the ISO week part of the input. See
+[`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md)
+for the week-to-quarter boundaries.
 
 ## Examples
 
 ``` r
-isoyearweek_to_isoquarter_c('2020-19')
+isoyearweek_to_isoquarter_c("2020-19")
 #> [1] "2"
 ```

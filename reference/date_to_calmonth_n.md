@@ -1,6 +1,6 @@
-# Date -\> calmonth (numeric)
+# Date to calendar month (numeric)
 
-Date -\> calmonth (numeric)
+Converts a date to its calendar month number, returned as a number.
 
 ## Usage
 
@@ -21,17 +21,17 @@ date_to_calmonth_n(x = lubridate::today())
 
 - x:
 
-  a Date object or string, in the form of 'yyyy-mm-dd'
+  A Date object, or a character string in the format 'yyyy-mm-dd'.
 
 ## Value
 
-calmonth
+Calendar month as an integer vector (1 for January to 12 for December).
 
 ## Examples
 
 ``` r
-date_to_calmonth_n("2021-08-11")
+date_to_calmonth_n(as.Date("2021-08-11"))
 #> [1] 8
-date_to_calmonth_n(lubridate::today())
-#> [1] 6
+date_to_calmonth_n("2021-01-01")
+#> [1] 1
 ```

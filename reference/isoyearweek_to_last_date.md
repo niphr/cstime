@@ -1,6 +1,6 @@
-# Last date in ISO yearweek
+# ISO yearweek to last date (Sunday)
 
-Returns the Sunday in the isoyearweek
+Returns the date of the Sunday that ends a given ISO yearweek.
 
 ## Usage
 
@@ -18,11 +18,18 @@ isoyearweek_to_last_date(x)
 
 - x:
 
-  ISO yearweek, e.g. "2020-19" for 19th week in 2020
+  ISO yearweek as a character string of the form "yyyy-ww", e.g.
+  "2020-19" for the 19th ISO week of 2020.
 
 ## Value
 
-Date of Sunday of that isoyearweek
+A [base::Date](https://rdrr.io/r/base/Dates.html) vector giving the
+Sunday of each ISO yearweek.
+
+## Details
+
+ISO weeks run Monday to Sunday, so the returned date is the Sunday of
+the supplied yearweek.
 
 ## Examples
 

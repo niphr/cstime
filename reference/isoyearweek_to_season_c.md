@@ -1,6 +1,7 @@
-# ISO yearweek to season.
+# ISO yearweek to season (character)
 
-ISO yearweek to season.
+Maps an ISO yearweek to the surveillance season it belongs to, written
+as "yyyy/yyyy".
 
 ## Usage
 
@@ -18,11 +19,20 @@ isoyearweek_to_season_c(x)
 
 - x:
 
-  isoyearweek, connected with '-'
+  ISO yearweek as a character string of the form "yyyy-ww", e.g.
+  "2021-01".
 
 ## Value
 
-Season, e.g. 2020/2021
+Season as a character vector (e.g. "2020/2021").
+
+## Details
+
+Seasons start at ISO week 35 (season week 1). ISO weeks 35 and later
+belong to the season beginning in that calendar year, while earlier
+weeks belong to the season that began the previous calendar year. For
+example "2021-01" falls in season "2020/2021" and "2021-50" falls in
+season "2021/2022".
 
 ## Examples
 

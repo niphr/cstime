@@ -1,6 +1,7 @@
-# ISO year and week (character) from Date object
+# Date to ISO yearweek (character)
 
-ISO year and week (character) from Date object
+Converts a date to a combined ISO 8601 year and week string of the form
+"yyyy-ww".
 
 ## Usage
 
@@ -21,17 +22,26 @@ date_to_isoyearweek_c(x = lubridate::today())
 
 - x:
 
-  a Date object or string, in the form of 'yyyy-mm-dd'
+  A Date object, or a character string in the format 'yyyy-mm-dd'.
 
 ## Value
 
-ISO year and week in character
+ISO yearweek as a character vector (e.g. "2021-32").
+
+## Details
+
+The output combines the ISO year (see
+[`date_to_isoyear_c()`](https://niphr.github.io/cstime/reference/date_to_isoyear_c.md))
+and the zero-padded ISO week (see
+[`date_to_isoweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoweek_c.md)),
+separated by a hyphen, for example "2021-32". Because the ISO year can
+differ from the calendar year, 2021-01-01 maps to "2020-53".
 
 ## Examples
 
 ``` r
-date_to_isoyearweek_c("2021-08-11")
+date_to_isoyearweek_c(as.Date("2021-08-11"))
 #> [1] "2021-32"
-date_to_isoyearweek_c(lubridate::today())
-#> [1] "2026-27"
+date_to_isoyearweek_c("2021-01-01")
+#> [1] "2020-53"
 ```
