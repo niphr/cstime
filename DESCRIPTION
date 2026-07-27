@@ -28,6 +28,7 @@ Suggests:
     ggplot2,
     knitr,
     testthat (>= 3.0.0),
+    pkgload,
     readxl,
     glue,
     lubridate
