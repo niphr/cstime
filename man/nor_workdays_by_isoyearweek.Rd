@@ -9,8 +9,8 @@ A \link[data.table:data.table]{data.table::data.table} with one row per ISO year
 columns:
 \describe{
 \item{isoyearweek}{Character. ISO yearweek, "yyyy-ww".}
-\item{public_holiday}{The proportion of days in the ISO yearweek that are public holidays.}
-\item{freeday}{The proportion of days in the ISO yearweek that are public holidays or Saturday/Sunday.}
+\item{public_holiday}{The proportion of days in the ISO yearweek that are public holidays, rounded to two decimal places.}
+\item{freeday}{The proportion of days in the ISO yearweek that are public holidays or Saturday/Sunday, rounded to two decimal places.}
 \item{workday}{1 minus \code{freeday}.}
 }
 }
@@ -23,7 +23,8 @@ nor_workdays_by_isoyearweek
 }
 \description{
 For each complete (7-day) ISO yearweek, the proportion of days that are
-public holidays, free days and workdays in Norway.
+public holidays, free days and workdays in Norway. The proportions are stored
+rounded to two decimal places, so 5 workdays in 7 is 0.71 rather than 5/7.
 }
 \examples{
 head(nor_workdays_by_isoyearweek)

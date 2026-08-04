@@ -32,3 +32,14 @@ week containing the first Thursday of the ISO year.
 date_to_isoweek_n(as.Date("2021-08-11"))
 date_to_isoweek_n("2021-01-01")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")}, which runs this
+function.
+
+Other date-to-number converters: 
+\code{\link{date_to_calmonth_n}()},
+\code{\link{date_to_calyear_n}()},
+\code{\link{date_to_isoquarter_n}()},
+\code{\link{date_to_isoyear_n}()}
+}
+\concept{date-to-number converters}

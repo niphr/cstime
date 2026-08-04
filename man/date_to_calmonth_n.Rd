@@ -29,3 +29,14 @@ Converts a date to its calendar month number, returned as a number.
 date_to_calmonth_n(as.Date("2021-08-11"))
 date_to_calmonth_n("2021-01-01")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")} for worked date,
+ISO year and ISO week conversions. No vignette runs this function.
+
+Other date-to-number converters: 
+\code{\link{date_to_calyear_n}()},
+\code{\link{date_to_isoquarter_n}()},
+\code{\link{date_to_isoweek_n}()},
+\code{\link{date_to_isoyear_n}()}
+}
+\concept{date-to-number converters}

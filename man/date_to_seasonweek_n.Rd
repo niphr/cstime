@@ -26,3 +26,9 @@ week 53 maps to the half-step season week 18.5.
 date_to_seasonweek_n(c("2021-01-01", "2021-12-01"))
 date_to_seasonweek_n(as.Date("2021-09-01"))
 }
+\seealso{
+\code{\link[=date_to_season_c]{date_to_season_c()}} for the season itself, and
+\code{\link[=isoyearweek_to_seasonweek_n]{isoyearweek_to_seasonweek_n()}} to start from an ISO yearweek instead.
+\code{vignette("season", package = "cstime")} for worked season week
+conversions. No vignette runs this function.
+}

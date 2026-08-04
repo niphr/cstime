@@ -32,3 +32,9 @@ in season "2020/2021" and "2021-50" falls in season "2021/2022".
 \examples{
 isoyearweek_to_season_c(c("2021-01", "2021-50"))
 }
+\seealso{
+\code{\link[=isoyearweek_to_seasonweek_n]{isoyearweek_to_seasonweek_n()}} for the week within that season, and
+\code{\link[=season_to_last_date]{season_to_last_date()}} for the date the season ends.
+\code{vignette("season", package = "cstime")} for worked season week
+conversions. No vignette runs this function.
+}

@@ -30,3 +30,13 @@ quarter (see \code{\link[=isoyearweek_to_isoquarter_c]{isoyearweek_to_isoquarter
 \examples{
 isoyearweek_to_isoyearquarter_c("2020-19")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")} for worked date,
+ISO year and ISO week conversions. No vignette runs this function.
+
+Other ISO yearweek-to-character converters: 
+\code{\link{isoyearweek_to_isoquarter_c}()},
+\code{\link{isoyearweek_to_isoweek_c}()},
+\code{\link{isoyearweek_to_isoyear_c}()}
+}
+\concept{ISO yearweek-to-character converters}

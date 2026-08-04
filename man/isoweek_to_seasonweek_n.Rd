@@ -35,3 +35,10 @@ week 18.5 so that the surrounding weeks keep consistent numbering.
 isoweek_to_seasonweek_n(35)
 isoweek_to_seasonweek_n(c(31, 53))
 }
+\seealso{
+\code{\link[=seasonweek_to_isoweek_n]{seasonweek_to_isoweek_n()}} and \code{\link[=seasonweek_to_isoweek_c]{seasonweek_to_isoweek_c()}} convert
+back. They return different classes from each other, so they are not a
+family.
+\code{vignette("cstime", package = "cstime")} and
+\code{vignette("season", package = "cstime")}, which both run this function.
+}

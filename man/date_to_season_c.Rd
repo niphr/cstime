@@ -26,3 +26,9 @@ January belong to the season that began the previous calendar year.
 date_to_season_c(c("2021-01-01", "2021-12-01"))
 date_to_season_c(as.Date("2021-09-01"))
 }
+\seealso{
+\code{\link[=date_to_seasonweek_n]{date_to_seasonweek_n()}} for the week within that season, and
+\code{\link[=isoyearweek_to_season_c]{isoyearweek_to_season_c()}} to start from an ISO yearweek instead.
+\code{vignette("season", package = "cstime")} for worked season week
+conversions. No vignette runs this function.
+}

@@ -17,7 +17,7 @@ isoyearweek_to_isoquarter_n(x)
 "2020-19" for the 19th ISO week of 2020.}
 }
 \value{
-ISO quarter as an integer vector (1 to 4).
+ISO quarter as a numeric vector (1 to 4).
 }
 \description{
 Maps an ISO yearweek to its ISO-week-based quarter (1 to 4), returned as a
@@ -31,3 +31,13 @@ weeks 40 onwards (including week 53) are quarter 4.
 \examples{
 isoyearweek_to_isoquarter_n("2020-19")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")} for worked date,
+ISO year and ISO week conversions. No vignette runs this function.
+
+Other ISO yearweek-to-number converters: 
+\code{\link{isoyearweek_to_isoweek_n}()},
+\code{\link{isoyearweek_to_isoyear_n}()},
+\code{\link{isoyearweek_to_seasonweek_n}()}
+}
+\concept{ISO yearweek-to-number converters}

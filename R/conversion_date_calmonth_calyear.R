@@ -14,6 +14,9 @@
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return Calendar year as a character vector (e.g. "2021").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname date_to_calyear_c
 #' @export
 #' @examples
@@ -53,6 +56,9 @@ date_to_calyear_c.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return Calendar year as an integer vector (e.g. 2021).
+#' @family date-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname date_to_calyear_n
 #' @export
 #'
@@ -93,6 +99,9 @@ date_to_calyear_n.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return Calendar month as a character vector ("01" to "12").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname date_to_calmonth_c
 #' @export
 #'
@@ -129,6 +138,9 @@ date_to_calmonth_c.Date <- function(x = lubridate::today()) {
 #'
 #' @return Calendar month as an integer vector (1 for January to 12 for
 #'   December).
+#' @family date-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname date_to_calmonth_n
 #' @export
 #'
@@ -169,6 +181,9 @@ date_to_calmonth_n.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return Calendar yearmonth as a character vector (e.g. "2021-M08").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname date_to_calyearmonth_c
 #' @export
 #'
@@ -196,4 +211,3 @@ date_to_calyearmonth_c.character <- function(x = lubridate::today()) {
 date_to_calyearmonth_c.Date <- function(x = lubridate::today()) {
   conversions_date_to[.(x)]$calyearmonth_c
 }
-

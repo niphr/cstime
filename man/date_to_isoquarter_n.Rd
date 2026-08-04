@@ -19,7 +19,7 @@ date_to_isoquarter_n(x = lubridate::today())
 \item{x}{A Date object, or a character string in the format 'yyyy-mm-dd'.}
 }
 \value{
-ISO quarter as an integer vector (1 to 4).
+ISO quarter as a numeric vector (1 to 4).
 }
 \description{
 Converts a date to an ISO-week-based quarter (1 to 4), returned as a number.
@@ -34,3 +34,14 @@ quarter 4.
 date_to_isoquarter_n(as.Date("2021-08-11"))
 date_to_isoquarter_n("2021-01-01")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")} for worked date,
+ISO year and ISO week conversions. No vignette runs this function.
+
+Other date-to-number converters: 
+\code{\link{date_to_calmonth_n}()},
+\code{\link{date_to_calyear_n}()},
+\code{\link{date_to_isoweek_n}()},
+\code{\link{date_to_isoyear_n}()}
+}
+\concept{date-to-number converters}

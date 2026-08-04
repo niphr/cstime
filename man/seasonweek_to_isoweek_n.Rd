@@ -30,3 +30,9 @@ so on, wrapping around the new year.
 seasonweek_to_isoweek_n(1)
 seasonweek_to_isoweek_n(c(31, 52))
 }
+\seealso{
+\code{\link[=seasonweek_to_isoweek_c]{seasonweek_to_isoweek_c()}} returns the same week as a zero-padded
+string, and \code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}} converts back.
+\code{vignette("cstime", package = "cstime")} and
+\code{vignette("season", package = "cstime")}, which both run this function.
+}

@@ -31,3 +31,8 @@ e.g. "35" or "01".
 seasonweek_to_isoweek_c(1)
 seasonweek_to_isoweek_c(c(31, 52))
 }
+\seealso{
+\code{\link[=seasonweek_to_isoweek_n]{seasonweek_to_isoweek_n()}} returns the same week as a number, and
+\code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}} converts back.
+\code{vignette("season", package = "cstime")}, which runs this function.
+}

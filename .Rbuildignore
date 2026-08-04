@@ -2,6 +2,9 @@
 ^\.Rproj\.user$
 ^docs$
 ^_pkgdown\.yml$
+^pkgdown$
+^index\.md$
+^Rplots\.pdf$
 ^license\.md$
 Makefile
 data-raw

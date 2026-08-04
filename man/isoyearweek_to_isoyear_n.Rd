@@ -29,3 +29,13 @@ returned. The week part is ignored.
 \examples{
 isoyearweek_to_isoyear_n("2020-10")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")}, which runs this
+function.
+
+Other ISO yearweek-to-number converters: 
+\code{\link{isoyearweek_to_isoquarter_n}()},
+\code{\link{isoyearweek_to_isoweek_n}()},
+\code{\link{isoyearweek_to_seasonweek_n}()}
+}
+\concept{ISO yearweek-to-number converters}

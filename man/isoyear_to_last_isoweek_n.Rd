@@ -33,3 +33,9 @@ accepted as either a number or a character string.
 isoyear_to_last_isoweek_n(c(2019, 2020, 2021))
 isoyear_to_last_isoweek_n("2020")
 }
+\seealso{
+\code{\link[=isoyear_to_last_isoyearweek_c]{isoyear_to_last_isoyearweek_c()}} and \code{\link[=isoyear_to_last_date]{isoyear_to_last_date()}}
+answer the same question as a yearweek string and as a date.
+\code{vignette("date_conversion", package = "cstime")} for worked date, ISO year
+and ISO week conversions. No vignette runs this function.
+}

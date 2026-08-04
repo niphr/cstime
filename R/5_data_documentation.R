@@ -1,8 +1,9 @@
 #' Dates of each weekday within ISO yearweeks
 #'
-#' A lookup table giving, for every ISO yearweek between 1900 and 2100, the date
-#' of each day of that week (Monday to Sunday) plus convenience list-columns
-#' that group those dates.
+#' A lookup table giving, for every ISO yearweek of ISO years 1900 to 2099, the
+#' date of each day of that week (Monday to Sunday) plus convenience list-columns
+#' that group those dates. The 10436 rows run from "1900-01" to "2099-53", so the
+#' dates covered are 1900-01-01 to 2100-01-03.
 #'
 #' @format
 #' A [data.table::data.table] with one row per ISO yearweek and the following
@@ -61,15 +62,16 @@
 #' Norwegian workdays and holidays by ISO yearweek
 #'
 #' For each complete (7-day) ISO yearweek, the proportion of days that are
-#' public holidays, free days and workdays in Norway.
+#' public holidays, free days and workdays in Norway. The proportions are stored
+#' rounded to two decimal places, so 5 workdays in 7 is 0.71 rather than 5/7.
 #'
 #' @format
 #' A [data.table::data.table] with one row per ISO yearweek and the following
 #' columns:
 #' \describe{
 #' \item{isoyearweek}{Character. ISO yearweek, "yyyy-ww".}
-#' \item{public_holiday}{The proportion of days in the ISO yearweek that are public holidays.}
-#' \item{freeday}{The proportion of days in the ISO yearweek that are public holidays or Saturday/Sunday.}
+#' \item{public_holiday}{The proportion of days in the ISO yearweek that are public holidays, rounded to two decimal places.}
+#' \item{freeday}{The proportion of days in the ISO yearweek that are public holidays or Saturday/Sunday, rounded to two decimal places.}
 #' \item{workday}{1 minus `freeday`.}
 #' }
 #' @source Aggregated from [nor_workdays_by_date]. See `data-raw/1_gen-data.R`

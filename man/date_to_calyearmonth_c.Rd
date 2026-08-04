@@ -33,3 +33,17 @@ separated by "-M", for example "2021-M08".
 date_to_calyearmonth_c(as.Date("2021-08-11"))
 date_to_calyearmonth_c("2021-01-01")
 }
+\seealso{
+\code{vignette("date_conversion", package = "cstime")} for worked date,
+ISO year and ISO week conversions. No vignette runs this function.
+
+Other date-to-character converters: 
+\code{\link{date_to_calmonth_c}()},
+\code{\link{date_to_calyear_c}()},
+\code{\link{date_to_isoquarter_c}()},
+\code{\link{date_to_isoweek_c}()},
+\code{\link{date_to_isoyear_c}()},
+\code{\link{date_to_isoyearquarter_c}()},
+\code{\link{date_to_isoyearweek_c}()}
+}
+\concept{date-to-character converters}

@@ -11,6 +11,11 @@
 #'
 #' @param x ISO week as a number between 1 and 53.
 #' @return Season week as a numeric vector (ISO week 53 returns 18.5).
+#' @seealso [seasonweek_to_isoweek_n()] and [seasonweek_to_isoweek_c()] convert
+#'   back. They return different classes from each other, so they are not a
+#'   family.
+#'   `vignette("cstime", package = "cstime")` and
+#'   `vignette("season", package = "cstime")`, which both run this function.
 #' @rdname isoweek_to_seasonweek_n
 #' @export
 #' @examples
@@ -51,6 +56,9 @@ isoweek_to_seasonweek_n.numeric <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2021-01".
 #' @return Season week as a numeric vector.
+#' @family ISO yearweek-to-number converters
+#' @seealso `vignette("season", package = "cstime")` for worked season week
+#'   conversions. No vignette runs this function.
 #' @examples
 #' isoyearweek_to_seasonweek_n(c("2021-01", "2021-35"))
 #' @export
@@ -70,6 +78,9 @@ isoyearweek_to_seasonweek_n <- function(x) {
 #'
 #' @param x Season week as a number between 1 and 52.
 #' @return ISO week as a character vector (e.g. "35").
+#' @seealso [seasonweek_to_isoweek_n()] returns the same week as a number, and
+#'   [isoweek_to_seasonweek_n()] converts back.
+#'   `vignette("season", package = "cstime")`, which runs this function.
 #' @rdname seasonweek_to_isoweek_c
 #' @export
 #' @examples
@@ -102,6 +113,10 @@ seasonweek_to_isoweek_c.numeric <- function(x) {
 #'
 #' @param x Season week as a number between 1 and 52.
 #' @return ISO week as an integer vector (1 to 53).
+#' @seealso [seasonweek_to_isoweek_c()] returns the same week as a zero-padded
+#'   string, and [isoweek_to_seasonweek_n()] converts back.
+#'   `vignette("cstime", package = "cstime")` and
+#'   `vignette("season", package = "cstime")`, which both run this function.
 #' @rdname seasonweek_to_isoweek_n
 #' @export
 #' @examples
@@ -137,6 +152,10 @@ seasonweek_to_isoweek_n.numeric <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2021-01".
 #' @return Season as a character vector (e.g. "2020/2021").
+#' @seealso [isoyearweek_to_seasonweek_n()] for the week within that season, and
+#'   [season_to_last_date()] for the date the season ends.
+#'   `vignette("season", package = "cstime")` for worked season week
+#'   conversions. No vignette runs this function.
 #' @rdname isoyearweek_to_season_c
 #' @examples
 #' isoyearweek_to_season_c(c("2021-01", "2021-50"))
@@ -170,6 +189,10 @@ isoyearweek_to_season_c.character <- function(x) {
 #'
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #' @return Season as a character vector (e.g. "2020/2021").
+#' @seealso [date_to_seasonweek_n()] for the week within that season, and
+#'   [isoyearweek_to_season_c()] to start from an ISO yearweek instead.
+#'   `vignette("season", package = "cstime")` for worked season week
+#'   conversions. No vignette runs this function.
 #' @examples
 #' date_to_season_c(c("2021-01-01", "2021-12-01"))
 #' date_to_season_c(as.Date("2021-09-01"))
@@ -191,6 +214,10 @@ date_to_season_c <- function(x) {
 #'
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #' @return Season week as a numeric vector.
+#' @seealso [date_to_season_c()] for the season itself, and
+#'   [isoyearweek_to_seasonweek_n()] to start from an ISO yearweek instead.
+#'   `vignette("season", package = "cstime")` for worked season week
+#'   conversions. No vignette runs this function.
 #' @examples
 #' date_to_seasonweek_n(c("2021-01-01", "2021-12-01"))
 #' date_to_seasonweek_n(as.Date("2021-09-01"))

@@ -17,7 +17,7 @@ season_to_last_date(x)
 "2019/2020".}
 }
 \value{
-A \link[base:Date]{base::Date} vector giving the last Sunday of each season.
+A \link[base:Dates]{base::Date} vector giving the last Sunday of each season.
 }
 \description{
 Returns the date of the Sunday that ends a given season.
@@ -30,4 +30,11 @@ second year. The returned date is the Sunday of the final week of the season.
 }
 \examples{
 season_to_last_date(c("2019/2020", "2020/2021"))
+}
+\seealso{
+\code{\link[=isoyearweek_to_season_c]{isoyearweek_to_season_c()}} finds the season an ISO yearweek belongs
+to. \code{\link[=isoyear_to_last_date]{isoyear_to_last_date()}} and \code{\link[=isoyearweek_to_last_date]{isoyearweek_to_last_date()}} do the same
+for an ISO year and for an ISO yearweek.
+\code{vignette("season", package = "cstime")} for worked season week
+conversions. No vignette runs this function.
 }

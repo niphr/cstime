@@ -14,6 +14,10 @@
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO year as a character vector (e.g. "2021").
+#' @family date-to-character converters
+#' @seealso `vignette("cstime", package = "cstime")` and
+#'   `vignette("date_conversion", package = "cstime")`, which both run this
+#'   function.
 #' @export
 #'
 #' @examples
@@ -53,6 +57,9 @@ date_to_isoyear_c.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO year as an integer vector (e.g. 2021).
+#' @family date-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")`, which runs this
+#'   function.
 #' @export
 #'
 #' @examples
@@ -93,6 +100,9 @@ date_to_isoyear_n.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO week as a character vector (e.g. "32").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")`, which runs this
+#'   function.
 #' @export
 #'
 #' @examples
@@ -131,6 +141,9 @@ date_to_isoweek_c.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO week as an integer vector (1 to 53).
+#' @family date-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")`, which runs this
+#'   function.
 #' @export
 #'
 #' @examples
@@ -172,6 +185,9 @@ date_to_isoweek_n.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO yearweek as a character vector (e.g. "2021-32").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")`, which runs this
+#'   function.
 #' @export
 #'
 #' @examples
@@ -211,7 +227,10 @@ date_to_isoyearweek_c.Date <- function(x = lubridate::today()) {
 #'
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
-#' @return ISO quarter as an integer vector (1 to 4).
+#' @return ISO quarter as a numeric vector (1 to 4).
+#' @family date-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @export
 #'
 #' @examples
@@ -251,6 +270,9 @@ date_to_isoquarter_n.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO quarter as a character vector (e.g. "3").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @export
 #'
 #' @examples
@@ -291,6 +313,9 @@ date_to_isoquarter_c.Date <- function(x = lubridate::today()) {
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
 #' @return ISO yearquarter as a character vector (e.g. "2021-Q3").
+#' @family date-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @export
 #'
 #' @examples
@@ -333,6 +358,9 @@ date_to_isoyearquarter_c.Date <- function(x = lubridate::today()) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return ISO year as an integer vector (e.g. 2020).
+#' @family ISO yearweek-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")`, which runs this
+#'   function.
 #' @rdname isoyearweek_to_isoyear_n
 #' @export
 #'
@@ -366,6 +394,10 @@ isoyearweek_to_isoyear_n.character <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return ISO year as a character vector (e.g. "2020").
+#' @family ISO yearweek-to-character converters
+#' @seealso `vignette("cstime", package = "cstime")` and
+#'   `vignette("date_conversion", package = "cstime")`, which both run this
+#'   function.
 #' @rdname isoyearweek_to_isoyear_c
 #' @export
 #' @examples
@@ -397,6 +429,9 @@ isoyearweek_to_isoyear_c.character <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return ISO week as an integer vector (1 to 53).
+#' @family ISO yearweek-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")`, which runs this
+#'   function.
 #' @rdname isoyearweek_to_isoweek_n
 #' @export
 #' @examples
@@ -429,6 +464,10 @@ isoyearweek_to_isoweek_n.character <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return ISO week as a character vector (e.g. "19").
+#' @family ISO yearweek-to-character converters
+#' @seealso `vignette("cstime", package = "cstime")` and
+#'   `vignette("date_conversion", package = "cstime")`, which both run this
+#'   function.
 #' @rdname isoyearweek_to_isoweek_c
 #' @export
 #' @examples
@@ -461,7 +500,10 @@ isoyearweek_to_isoweek_c.character <- function(x) {
 #'
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
-#' @return ISO quarter as an integer vector (1 to 4).
+#' @return ISO quarter as a numeric vector (1 to 4).
+#' @family ISO yearweek-to-number converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname isoyearweek_to_isoquarter_n
 #' @export
 #' @examples
@@ -494,6 +536,9 @@ isoyearweek_to_isoquarter_n.character <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return ISO quarter as a character vector (e.g. "2").
+#' @family ISO yearweek-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname isoyearweek_to_isoquarter_c
 #' @export
 #' @examples
@@ -526,6 +571,9 @@ isoyearweek_to_isoquarter_c.character <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return ISO yearquarter as a character vector (e.g. "2020-Q2").
+#' @family ISO yearweek-to-character converters
+#' @seealso `vignette("date_conversion", package = "cstime")` for worked date,
+#'   ISO year and ISO week conversions. No vignette runs this function.
 #' @rdname isoyearweek_to_isoyearquarter_c
 #' @export
 #' @examples
@@ -561,6 +609,10 @@ isoyearweek_to_isoyearquarter_c.character <- function(x) {
 #'
 #' @param x ISO year as a number or character string, e.g. 2020 or "2020".
 #' @return Last ISO yearweek of the year as a character vector (e.g. "2020-53").
+#' @seealso [isoyear_to_last_isoweek_n()] and [isoyear_to_last_date()] answer
+#'   the same question as a week number and as a date.
+#'   `vignette("date_conversion", package = "cstime")` for worked date, ISO year
+#'   and ISO week conversions. No vignette runs this function.
 #' @rdname isoyear_to_last_isoyearweek_c
 #' @examples
 #' isoyear_to_last_isoyearweek_c(c(2019, 2020, 2021))
@@ -599,6 +651,10 @@ isoyear_to_last_isoyearweek_c.numeric <- function(x) {
 #'
 #' @param x ISO year as a number or character string, e.g. 2020 or "2020".
 #' @return Last ISO week of the year as an integer vector (52 or 53).
+#' @seealso [isoyear_to_last_isoyearweek_c()] and [isoyear_to_last_date()]
+#'   answer the same question as a yearweek string and as a date.
+#'   `vignette("date_conversion", package = "cstime")` for worked date, ISO year
+#'   and ISO week conversions. No vignette runs this function.
 #' @rdname isoyear_to_last_isoweek_n
 #' @examples
 #' isoyear_to_last_isoweek_n(c(2019, 2020, 2021))
@@ -640,6 +696,12 @@ isoyear_to_last_isoweek_n.numeric <- function(x) {
 #'
 #' @param x ISO year as a number or character string, e.g. 2020 or "2020".
 #' @return A [base::Date] vector giving the last Sunday of each ISO year.
+#' @seealso [isoyear_to_last_isoweek_n()] and [isoyear_to_last_isoyearweek_c()]
+#'   answer the same question as a week number and as a yearweek string.
+#'   [isoyearweek_to_last_date()] and [season_to_last_date()] do the same for an
+#'   ISO yearweek and for a season.
+#'   `vignette("date_conversion", package = "cstime")` for worked date, ISO year
+#'   and ISO week conversions. No vignette runs this function.
 #' @rdname isoyear_to_last_date
 #' @examples
 #' isoyear_to_last_date(c(2019, 2020, 2021))
@@ -678,6 +740,11 @@ isoyear_to_last_date.numeric <- function(x) {
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
 #' @return A [base::Date] vector giving the Sunday of each ISO yearweek.
+#' @seealso [isoyear_to_last_date()] and [season_to_last_date()] do the same for
+#'   an ISO year and for a season. Each takes a different input grammar, so they
+#'   are not interchangeable.
+#'   `vignette("date_conversion", package = "cstime")` for worked date, ISO year
+#'   and ISO week conversions. No vignette runs this function.
 #' @rdname isoyearweek_to_last_date
 #' @examples
 #' isoyearweek_to_last_date(c("2019-19", "2020-01"))
@@ -711,6 +778,11 @@ isoyearweek_to_last_date.character <- function(x) {
 #' @param x Season as a character string of the form "yyyy/yyyy", e.g.
 #'   "2019/2020".
 #' @return A [base::Date] vector giving the last Sunday of each season.
+#' @seealso [isoyearweek_to_season_c()] finds the season an ISO yearweek belongs
+#'   to. [isoyear_to_last_date()] and [isoyearweek_to_last_date()] do the same
+#'   for an ISO year and for an ISO yearweek.
+#'   `vignette("season", package = "cstime")` for worked season week
+#'   conversions. No vignette runs this function.
 #' @rdname season_to_last_date
 #' @examples
 #' season_to_last_date(c("2019/2020", "2020/2021"))

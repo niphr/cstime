@@ -19,7 +19,7 @@ isoyear_to_last_date(x)
 \item{x}{ISO year as a number or character string, e.g. 2020 or "2020".}
 }
 \value{
-A \link[base:Date]{base::Date} vector giving the last Sunday of each ISO year.
+A \link[base:Dates]{base::Date} vector giving the last Sunday of each ISO year.
 }
 \description{
 Returns the date of the Sunday that ends the last ISO week of a given ISO
@@ -35,4 +35,12 @@ or a character string.
 \examples{
 isoyear_to_last_date(c(2019, 2020, 2021))
 isoyear_to_last_date("2020")
+}
+\seealso{
+\code{\link[=isoyear_to_last_isoweek_n]{isoyear_to_last_isoweek_n()}} and \code{\link[=isoyear_to_last_isoyearweek_c]{isoyear_to_last_isoyearweek_c()}}
+answer the same question as a week number and as a yearweek string.
+\code{\link[=isoyearweek_to_last_date]{isoyearweek_to_last_date()}} and \code{\link[=season_to_last_date]{season_to_last_date()}} do the same for an
+ISO yearweek and for a season.
+\code{vignette("date_conversion", package = "cstime")} for worked date, ISO year
+and ISO week conversions. No vignette runs this function.
 }
