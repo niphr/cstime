@@ -28,11 +28,21 @@ with the supplied `format` string, which uses the conversion codes
 documented in
 [`base::strptime()`](https://rdrr.io/r/base/strptime.html).
 
+The result depends on the time zone of the session. At one instant, a
+session in Pacific/Auckland and a session in America/Los_Angeles can
+report different calendar dates, not only different clock times.
+
+## See also
+
+[`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
+to convert a date rather than to read the clock. No vignette runs this
+function.
+
 ## Examples
 
 ``` r
 now_c()
-#> [1] "2026-07-27 08:30:02"
+#> [1] "2026-08-04 19:00:09"
 now_c(format = "%Y-%m-%d")
-#> [1] "2026-07-27"
+#> [1] "2026-08-04"
 ```

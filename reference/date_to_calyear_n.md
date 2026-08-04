@@ -34,6 +34,18 @@ Unlike the ISO year (see
 the calendar year is taken directly from the date, so 2021-01-01 is
 calendar year 2021.
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md)
+for worked date, ISO year and ISO week conversions. No vignette runs
+this function.
+
+Other date-to-number converters:
+[`date_to_calmonth_n()`](https://niphr.github.io/cstime/reference/date_to_calmonth_n.md),
+[`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md),
+[`date_to_isoweek_n()`](https://niphr.github.io/cstime/reference/date_to_isoweek_n.md),
+[`date_to_isoyear_n()`](https://niphr.github.io/cstime/reference/date_to_isoyear_n.md)
+
 ## Examples
 
 ``` r

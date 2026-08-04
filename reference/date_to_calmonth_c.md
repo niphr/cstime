@@ -33,6 +33,21 @@ Calendar month as a character vector ("01" to "12").
 The month is returned as two digits, "01" for January through "12" for
 December.
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md)
+for worked date, ISO year and ISO week conversions. No vignette runs
+this function.
+
+Other date-to-character converters:
+[`date_to_calyear_c()`](https://niphr.github.io/cstime/reference/date_to_calyear_c.md),
+[`date_to_calyearmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calyearmonth_c.md),
+[`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md),
+[`date_to_isoweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoweek_c.md),
+[`date_to_isoyear_c()`](https://niphr.github.io/cstime/reference/date_to_isoyear_c.md),
+[`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md),
+[`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
+
 ## Examples
 
 ``` r

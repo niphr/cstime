@@ -34,6 +34,17 @@ start and end of January and December. See
 [`date_to_isoyear_c()`](https://niphr.github.io/cstime/reference/date_to_isoyear_c.md)
 for the rules used to assign weeks and years.
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md),
+which runs this function.
+
+Other date-to-number converters:
+[`date_to_calmonth_n()`](https://niphr.github.io/cstime/reference/date_to_calmonth_n.md),
+[`date_to_calyear_n()`](https://niphr.github.io/cstime/reference/date_to_calyear_n.md),
+[`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md),
+[`date_to_isoweek_n()`](https://niphr.github.io/cstime/reference/date_to_isoweek_n.md)
+
 ## Examples
 
 ``` r

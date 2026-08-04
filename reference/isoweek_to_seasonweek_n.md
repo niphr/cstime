@@ -36,6 +36,18 @@ year. ISO week 53 (which only occurs in long ISO years) maps to the
 half-step season week 18.5 so that the surrounding weeks keep consistent
 numbering.
 
+## See also
+
+[`seasonweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_n.md)
+and
+[`seasonweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_c.md)
+convert back. They return different classes from each other, so they are
+not a family.
+[`vignette("cstime", package = "cstime")`](https://niphr.github.io/cstime/articles/cstime.md)
+and
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md),
+which both run this function.
+
 ## Examples
 
 ``` r

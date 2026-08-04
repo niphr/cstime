@@ -34,6 +34,20 @@ ISO weeks run Monday to Sunday and are numbered 01 to 52 or 53. Week 01
 is the week containing the first Thursday of the ISO year. The week is
 returned as two digits, e.g. "01" or "53".
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md),
+which runs this function.
+
+Other date-to-character converters:
+[`date_to_calmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calmonth_c.md),
+[`date_to_calyear_c()`](https://niphr.github.io/cstime/reference/date_to_calyear_c.md),
+[`date_to_calyearmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calyearmonth_c.md),
+[`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md),
+[`date_to_isoyear_c()`](https://niphr.github.io/cstime/reference/date_to_isoyear_c.md),
+[`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md),
+[`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
+
 ## Examples
 
 ``` r

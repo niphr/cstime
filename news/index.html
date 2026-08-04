@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cstime</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2025.10.13</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2026.8.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,6 +51,19 @@
       <small>Source: <a href="https://github.com/niphr/cstime/blob/main/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="2026.8.4" id="version-202684">Version 2026.8.4<a class="anchor" aria-label="anchor" href="#version-202684"></a></h2>
+<ul><li>Documentation only. No function changes behaviour.</li>
+<li>
+<code>README.md</code> gained an installation section, a quick start and a which-function-do-I-want table.</li>
+<li>Every exported function gained an <code>@seealso</code> that names the vignette covering it, or states plainly that no vignette runs it.</li>
+<li>Added four <code>@family</code> groups for the date-to-character, date-to-number, yearweek-to-character and yearweek-to-number converters.</li>
+<li>Corrected three documentation claims. <code>dates_by_isoyearweek</code> covers ISO years 1900 to 2099, not 1900 to 2100. <code><a href="../reference/date_to_isoquarter_n.html">date_to_isoquarter_n()</a></code> and <code><a href="../reference/isoyearweek_to_isoquarter_n.html">isoyearweek_to_isoquarter_n()</a></code> return a numeric vector, not an integer vector. <code>nor_workdays_by_isoyearweek</code> stores its proportions rounded to two decimal places.</li>
+<li>
+<code><a href="../reference/now_c.html">now_c()</a></code> now documents that its result depends on the session time zone.</li>
+<li>
+<code>index.md</code> and <code>pkgdown</code> are no longer shipped in the source tarball.</li>
+</ul></div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="2025.10.13" id="version-20251013">Version 2025.10.13<a class="anchor" aria-label="anchor" href="#version-20251013"></a></h2><p class="text-muted">CRAN release: 2025-10-14</p>
 <ul><li>Seasons now start on week 35.</li>

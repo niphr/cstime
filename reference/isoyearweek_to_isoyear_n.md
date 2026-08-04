@@ -31,6 +31,16 @@ ISO year as an integer vector (e.g. 2020).
 The input is split on the hyphen into year and week, and the year part
 is returned. The week part is ignored.
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md),
+which runs this function.
+
+Other ISO yearweek-to-number converters:
+[`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md),
+[`isoyearweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_n.md),
+[`isoyearweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_seasonweek_n.md)
+
 ## Examples
 
 ``` r

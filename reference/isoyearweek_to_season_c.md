@@ -34,6 +34,15 @@ weeks belong to the season that began the previous calendar year. For
 example "2021-01" falls in season "2020/2021" and "2021-50" falls in
 season "2021/2022".
 
+## See also
+
+[`isoyearweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_seasonweek_n.md)
+for the week within that season, and
+[`season_to_last_date()`](https://niphr.github.io/cstime/reference/season_to_last_date.md)
+for the date the season ends.
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md)
+for worked season week conversions. No vignette runs this function.
+
 ## Examples
 
 ``` r

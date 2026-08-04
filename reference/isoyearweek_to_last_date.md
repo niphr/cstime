@@ -31,6 +31,17 @@ Sunday of each ISO yearweek.
 ISO weeks run Monday to Sunday, so the returned date is the Sunday of
 the supplied yearweek.
 
+## See also
+
+[`isoyear_to_last_date()`](https://niphr.github.io/cstime/reference/isoyear_to_last_date.md)
+and
+[`season_to_last_date()`](https://niphr.github.io/cstime/reference/season_to_last_date.md)
+do the same for an ISO year and for a season. Each takes a different
+input grammar, so they are not interchangeable.
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md)
+for worked date, ISO year and ISO week conversions. No vignette runs
+this function.
+
 ## Examples
 
 ``` r

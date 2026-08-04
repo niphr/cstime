@@ -29,6 +29,15 @@ As with
 [`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md),
 ISO week 53 maps to the half-step season week 18.5.
 
+## See also
+
+[`date_to_season_c()`](https://niphr.github.io/cstime/reference/date_to_season_c.md)
+for the season itself, and
+[`isoyearweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_seasonweek_n.md)
+to start from an ISO yearweek instead.
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md)
+for worked season week conversions. No vignette runs this function.
+
 ## Examples
 
 ``` r

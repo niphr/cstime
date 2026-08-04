@@ -33,6 +33,21 @@ Calendar yearmonth as a character vector (e.g. "2021-M08").
 The output combines the calendar year and the zero-padded calendar
 month, separated by "-M", for example "2021-M08".
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md)
+for worked date, ISO year and ISO week conversions. No vignette runs
+this function.
+
+Other date-to-character converters:
+[`date_to_calmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calmonth_c.md),
+[`date_to_calyear_c()`](https://niphr.github.io/cstime/reference/date_to_calyear_c.md),
+[`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md),
+[`date_to_isoweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoweek_c.md),
+[`date_to_isoyear_c()`](https://niphr.github.io/cstime/reference/date_to_isoyear_c.md),
+[`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md),
+[`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
+
 ## Examples
 
 ``` r

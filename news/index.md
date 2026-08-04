@@ -1,5 +1,26 @@
 # Changelog
 
+## Version 2026.8.4
+
+- Documentation only. No function changes behaviour.
+- `README.md` gained an installation section, a quick start and a
+  which-function-do-I-want table.
+- Every exported function gained an `@seealso` that names the vignette
+  covering it, or states plainly that no vignette runs it.
+- Added four `@family` groups for the date-to-character, date-to-number,
+  yearweek-to-character and yearweek-to-number converters.
+- Corrected three documentation claims. `dates_by_isoyearweek` covers
+  ISO years 1900 to 2099, not 1900 to 2100.
+  [`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md)
+  and
+  [`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md)
+  return a numeric vector, not an integer vector.
+  `nor_workdays_by_isoyearweek` stores its proportions rounded to two
+  decimal places.
+- [`now_c()`](https://niphr.github.io/cstime/reference/now_c.md) now
+  documents that its result depends on the session time zone.
+- `index.md` and `pkgdown` are no longer shipped in the source tarball.
+
 ## Version 2025.10.13
 
 CRAN release: 2025-10-14

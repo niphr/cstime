@@ -34,6 +34,17 @@ example "2019/2020"). Seasons are aligned to ISO weeks, with season week
 the second year. The returned date is the Sunday of the final week of
 the season.
 
+## See also
+
+[`isoyearweek_to_season_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_season_c.md)
+finds the season an ISO yearweek belongs to.
+[`isoyear_to_last_date()`](https://niphr.github.io/cstime/reference/isoyear_to_last_date.md)
+and
+[`isoyearweek_to_last_date()`](https://niphr.github.io/cstime/reference/isoyearweek_to_last_date.md)
+do the same for an ISO year and for an ISO yearweek.
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md)
+for worked season week conversions. No vignette runs this function.
+
 ## Examples
 
 ``` r

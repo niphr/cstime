@@ -37,6 +37,22 @@ belong to the last ISO week of the previous year, and the last days of
 December can belong to ISO week 1 of the following year. For example
 2021-01-01 is a Friday that falls in ISO week 53 of ISO year 2020.
 
+## See also
+
+[`vignette("cstime", package = "cstime")`](https://niphr.github.io/cstime/articles/cstime.md)
+and
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md),
+which both run this function.
+
+Other date-to-character converters:
+[`date_to_calmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calmonth_c.md),
+[`date_to_calyear_c()`](https://niphr.github.io/cstime/reference/date_to_calyear_c.md),
+[`date_to_calyearmonth_c()`](https://niphr.github.io/cstime/reference/date_to_calyearmonth_c.md),
+[`date_to_isoquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_c.md),
+[`date_to_isoweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoweek_c.md),
+[`date_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearquarter_c.md),
+[`date_to_isoyearweek_c()`](https://niphr.github.io/cstime/reference/date_to_isoyearweek_c.md)
+
 ## Examples
 
 ``` r

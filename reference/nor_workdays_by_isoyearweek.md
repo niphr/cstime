@@ -1,7 +1,9 @@
 # Norwegian workdays and holidays by ISO yearweek
 
 For each complete (7-day) ISO yearweek, the proportion of days that are
-public holidays, free days and workdays in Norway.
+public holidays, free days and workdays in Norway. The proportions are
+stored rounded to two decimal places, so 5 workdays in 7 is 0.71 rather
+than 5/7.
 
 ## Usage
 
@@ -21,12 +23,13 @@ with one row per ISO yearweek and the following columns:
 
 - public_holiday:
 
-  The proportion of days in the ISO yearweek that are public holidays.
+  The proportion of days in the ISO yearweek that are public holidays,
+  rounded to two decimal places.
 
 - freeday:
 
   The proportion of days in the ISO yearweek that are public holidays or
-  Saturday/Sunday.
+  Saturday/Sunday, rounded to two decimal places.
 
 - workday:
 

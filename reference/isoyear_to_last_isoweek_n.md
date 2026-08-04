@@ -33,6 +33,16 @@ Last ISO week of the year as an integer vector (52 or 53).
 This is 52 for most years and 53 for long ISO years such as 2020. The
 year is accepted as either a number or a character string.
 
+## See also
+
+[`isoyear_to_last_isoyearweek_c()`](https://niphr.github.io/cstime/reference/isoyear_to_last_isoyearweek_c.md)
+and
+[`isoyear_to_last_date()`](https://niphr.github.io/cstime/reference/isoyear_to_last_date.md)
+answer the same question as a yearweek string and as a date.
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md)
+for worked date, ISO year and ISO week conversions. No vignette runs
+this function.
+
 ## Examples
 
 ``` r

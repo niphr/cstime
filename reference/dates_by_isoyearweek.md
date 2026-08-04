@@ -1,8 +1,9 @@
 # Dates of each weekday within ISO yearweeks
 
-A lookup table giving, for every ISO yearweek between 1900 and 2100, the
-date of each day of that week (Monday to Sunday) plus convenience
-list-columns that group those dates.
+A lookup table giving, for every ISO yearweek of ISO years 1900 to 2099,
+the date of each day of that week (Monday to Sunday) plus convenience
+list-columns that group those dates. The 10436 rows run from "1900-01"
+to "2099-53", so the dates covered are 1900-01-01 to 2100-01-03.
 
 ## Usage
 

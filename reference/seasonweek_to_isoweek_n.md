@@ -31,6 +31,17 @@ ISO week as an integer vector (1 to 53).
 Season week 1 corresponds to ISO week 35, season week 2 to ISO week 36,
 and so on, wrapping around the new year.
 
+## See also
+
+[`seasonweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/seasonweek_to_isoweek_c.md)
+returns the same week as a zero-padded string, and
+[`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md)
+converts back.
+[`vignette("cstime", package = "cstime")`](https://niphr.github.io/cstime/articles/cstime.md)
+and
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md),
+which both run this function.
+
 ## Examples
 
 ``` r

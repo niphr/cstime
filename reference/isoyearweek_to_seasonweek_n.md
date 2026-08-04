@@ -28,6 +28,16 @@ with
 so the same season-week numbering and the 18.5 half-step for ISO week 53
 apply.
 
+## See also
+
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md)
+for worked season week conversions. No vignette runs this function.
+
+Other ISO yearweek-to-number converters:
+[`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md),
+[`isoyearweek_to_isoweek_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_n.md),
+[`isoyearweek_to_isoyear_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyear_n.md)
+
 ## Examples
 
 ``` r

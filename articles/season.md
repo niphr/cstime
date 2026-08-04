@@ -10,7 +10,7 @@ is 53, the corresponding season week is 18.5.
 
 ``` r
 library(cstime)
-#> cstime 2025.10.13
+#> cstime 2026.8.4
 #> https://niphr.github.io/cstime/
 library(magrittr)
 library(data.table)

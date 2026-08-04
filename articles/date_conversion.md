@@ -10,7 +10,7 @@ a double.
 
 ``` r
 library(cstime)
-#> cstime 2025.10.13
+#> cstime 2026.8.4
 #> https://niphr.github.io/cstime/
 library(magrittr)
 ```
@@ -26,9 +26,9 @@ date_to_isoyear_c()
 date_to_isoyear_n()
 #> [1] 2026
 date_to_isoweek_c()
-#> [1] "31"
+#> [1] "32"
 date_to_isoweek_n()
-#> [1] 31
+#> [1] 32
 # provide a date
 date_to_isoyear_c('2021-01-01')
 #> [1] "2020"

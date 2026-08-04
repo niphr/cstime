@@ -28,6 +28,15 @@ and then to a season with
 Seasons start at ISO week 35, so dates in early January belong to the
 season that began the previous calendar year.
 
+## See also
+
+[`date_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/date_to_seasonweek_n.md)
+for the week within that season, and
+[`isoyearweek_to_season_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_season_c.md)
+to start from an ISO yearweek instead.
+[`vignette("season", package = "cstime")`](https://niphr.github.io/cstime/articles/season.md)
+for worked season week conversions. No vignette runs this function.
+
 ## Examples
 
 ``` r

@@ -32,6 +32,17 @@ The quarter is derived from the ISO week part of the input. See
 [`isoyearweek_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoquarter_n.md)
 for the week-to-quarter boundaries.
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md)
+for worked date, ISO year and ISO week conversions. No vignette runs
+this function.
+
+Other ISO yearweek-to-character converters:
+[`isoyearweek_to_isoweek_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoweek_c.md),
+[`isoyearweek_to_isoyear_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyear_c.md),
+[`isoyearweek_to_isoyearquarter_c()`](https://niphr.github.io/cstime/reference/isoyearweek_to_isoyearquarter_c.md)
+
 ## Examples
 
 ``` r

@@ -32,6 +32,17 @@ ISO week as an integer vector (1 to 53).
 ISO weeks run Monday to Sunday and are numbered 1 to 52 or 53. Week 1 is
 the week containing the first Thursday of the ISO year.
 
+## See also
+
+[`vignette("date_conversion", package = "cstime")`](https://niphr.github.io/cstime/articles/date_conversion.md),
+which runs this function.
+
+Other date-to-number converters:
+[`date_to_calmonth_n()`](https://niphr.github.io/cstime/reference/date_to_calmonth_n.md),
+[`date_to_calyear_n()`](https://niphr.github.io/cstime/reference/date_to_calyear_n.md),
+[`date_to_isoquarter_n()`](https://niphr.github.io/cstime/reference/date_to_isoquarter_n.md),
+[`date_to_isoyear_n()`](https://niphr.github.io/cstime/reference/date_to_isoyear_n.md)
+
 ## Examples
 
 ``` r
