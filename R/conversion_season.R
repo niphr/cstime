@@ -4,10 +4,10 @@
 #' where season week 1 corresponds to ISO week 35.
 #'
 #' @details
-#' Surveillance seasons start at ISO week 35, so ISO week 35 is season week 1,
-#' ISO week 36 is season week 2, and so on, wrapping around the new year. ISO
-#' week 53 (which only occurs in long ISO years) maps to the half-step season
-#' week 18.5 so that the surrounding weeks keep consistent numbering.
+#' Surveillance seasons start at ISO week 35, so ISO week 35 is season week 1.
+#' ISO week 36 is season week 2, and the numbering continues across the new
+#' year. ISO week 53 occurs only in long ISO years. It maps to the half-step
+#' season week 18.5, so that the surrounding weeks keep consistent numbering.
 #'
 #' @param x ISO week as a number between 1 and 53.
 #' @return Season week as a numeric vector (ISO week 53 returns 18.5).
@@ -49,9 +49,9 @@ isoweek_to_seasonweek_n.numeric <- function(x) {
 #' season week 1 corresponds to ISO week 35.
 #'
 #' @details
-#' The ISO week is extracted from the yearweek string and then converted with
-#' [isoweek_to_seasonweek_n()], so the same season-week numbering and the 18.5
-#' half-step for ISO week 53 apply.
+#' This function takes the ISO week from the yearweek string and converts it
+#' with [isoweek_to_seasonweek_n()]. The same season-week numbering applies,
+#' including the 18.5 half-step for ISO week 53.
 #'
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2021-01".
@@ -145,9 +145,9 @@ seasonweek_to_isoweek_n.numeric <- function(x) {
 #'
 #' @details
 #' Seasons start at ISO week 35 (season week 1). ISO weeks 35 and later belong
-#' to the season beginning in that calendar year, while earlier weeks belong to
-#' the season that began the previous calendar year. For example "2021-01" falls
-#' in season "2020/2021" and "2021-50" falls in season "2021/2022".
+#' to the season that starts in that calendar year. Earlier weeks belong to the
+#' season that started in the previous calendar year. For example, "2021-01"
+#' falls in season "2020/2021" and "2021-50" falls in season "2021/2022".
 #'
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2021-01".

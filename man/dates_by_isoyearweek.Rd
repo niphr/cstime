@@ -30,10 +30,10 @@ Generated from a daily date sequence using ISO 8601 week rules. See
 dates_by_isoyearweek
 }
 \description{
-A lookup table giving, for every ISO yearweek of ISO years 1900 to 2099, the
-date of each day of that week (Monday to Sunday) plus convenience list-columns
-that group those dates. The 10436 rows run from "1900-01" to "2099-53", so the
-dates covered are 1900-01-01 to 2100-01-03.
+A lookup table with one row per ISO yearweek, for ISO years 1900 to 2099.
+Each row holds the date of every day of that week, Monday to Sunday, plus
+list-columns that group those dates. The 10436 rows run from "1900-01" to
+"2099-53", so the dates covered are 1900-01-01 to 2100-01-03.
 }
 \examples{
 library(data.table)

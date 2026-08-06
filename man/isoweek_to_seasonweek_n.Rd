@@ -26,10 +26,10 @@ Maps an ISO week number to its position within the surveillance season,
 where season week 1 corresponds to ISO week 35.
 }
 \details{
-Surveillance seasons start at ISO week 35, so ISO week 35 is season week 1,
-ISO week 36 is season week 2, and so on, wrapping around the new year. ISO
-week 53 (which only occurs in long ISO years) maps to the half-step season
-week 18.5 so that the surrounding weeks keep consistent numbering.
+Surveillance seasons start at ISO week 35, so ISO week 35 is season week 1.
+ISO week 36 is season week 2, and the numbering continues across the new
+year. ISO week 53 occurs only in long ISO years. It maps to the half-step
+season week 18.5, so that the surrounding weeks keep consistent numbering.
 }
 \examples{
 isoweek_to_seasonweek_n(35)

@@ -27,10 +27,10 @@ string.
 }
 \details{
 The ISO 8601 week-based year is not always the same as the calendar year.
-ISO weeks run Monday to Sunday, and week 1 is the week containing the year's
-first Thursday. As a result the first days of January can belong to the last
-ISO week of the previous year, and the last days of December can belong to
-ISO week 1 of the following year. For example 2021-01-01 is a Friday that
+ISO weeks run Monday to Sunday. Week 1 is the week that contains the first
+Thursday of the year. As a result, the first days of January can belong to
+the last ISO week of the previous year. The last days of December can belong
+to ISO week 1 of the following year. For example, 2021-01-01 is a Friday that
 falls in ISO week 53 of ISO year 2020.
 }
 \examples{

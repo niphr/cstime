@@ -5,10 +5,10 @@
 #'
 #' @details
 #' The ISO 8601 week-based year is not always the same as the calendar year.
-#' ISO weeks run Monday to Sunday, and week 1 is the week containing the year's
-#' first Thursday. As a result the first days of January can belong to the last
-#' ISO week of the previous year, and the last days of December can belong to
-#' ISO week 1 of the following year. For example 2021-01-01 is a Friday that
+#' ISO weeks run Monday to Sunday. Week 1 is the week that contains the first
+#' Thursday of the year. As a result, the first days of January can belong to
+#' the last ISO week of the previous year. The last days of December can belong
+#' to ISO week 1 of the following year. For example, 2021-01-01 is a Friday that
 #' falls in ISO week 53 of ISO year 2020.
 #'
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
@@ -220,10 +220,12 @@ date_to_isoyearweek_c.Date <- function(x = lubridate::today()) {
 #' Converts a date to an ISO-week-based quarter (1 to 4), returned as a number.
 #'
 #' @details
-#' The quarter is derived from the ISO week rather than the calendar month:
-#' weeks 1 to 13 are quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are
-#' quarter 3, and weeks 40 onwards (including week 53 in long ISO years) are
-#' quarter 4.
+#' The quarter comes from the ISO week, not from the calendar month:
+#'
+#' - Weeks 1 to 13 are quarter 1.
+#' - Weeks 14 to 26 are quarter 2.
+#' - Weeks 27 to 39 are quarter 3.
+#' - Weeks 40 and later are quarter 4. This includes week 53 in a long ISO year.
 #'
 #' @param x A Date object, or a character string in the format 'yyyy-mm-dd'.
 #'
@@ -494,9 +496,12 @@ isoyearweek_to_isoweek_c.character <- function(x) {
 #' number.
 #'
 #' @details
-#' The quarter is derived from the ISO week part of the input. Weeks 1 to 13 are
-#' quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are quarter 3, and
-#' weeks 40 onwards (including week 53) are quarter 4.
+#' The quarter comes from the ISO week part of the input:
+#'
+#' - Weeks 1 to 13 are quarter 1.
+#' - Weeks 14 to 26 are quarter 2.
+#' - Weeks 27 to 39 are quarter 3.
+#' - Weeks 40 and later are quarter 4. This includes week 53.
 #'
 #' @param x ISO yearweek as a character string of the form "yyyy-ww", e.g.
 #'   "2020-19" for the 19th ISO week of 2020.
@@ -689,10 +694,10 @@ isoyear_to_last_isoweek_n.numeric <- function(x) {
 #'
 #' @details
 #' ISO weeks end on Sunday, so the returned date is the Sunday of the final ISO
-#' week. Because ISO years and calendar years are not aligned, this date can
-#' fall in early January of the following calendar year (for example the last
-#' date of ISO year 2020 is 2021-01-03). The year is accepted as either a number
-#' or a character string.
+#' week. ISO years and calendar years are not aligned. The returned date can
+#' therefore fall in early January of the following calendar year. For example,
+#' the last date of ISO year 2020 is 2021-01-03. The function accepts the year
+#' as either a number or a character string.
 #'
 #' @param x ISO year as a number or character string, e.g. 2020 or "2020".
 #' @return A [base::Date] vector giving the last Sunday of each ISO year.
@@ -770,10 +775,10 @@ isoyearweek_to_last_date.character <- function(x) {
 #' Returns the date of the Sunday that ends a given season.
 #'
 #' @details
-#' A season is written "yyyy/yyyy" where the two years are consecutive (for
-#' example "2019/2020"). Seasons are aligned to ISO weeks, with season week 1
-#' starting at ISO week 35; the season therefore ends in late summer of the
-#' second year. The returned date is the Sunday of the final week of the season.
+#' A season is written "yyyy/yyyy" where the two years are consecutive, for
+#' example "2019/2020". Seasons are aligned to ISO weeks, and season week 1
+#' starts at ISO week 35. The season therefore ends in late summer of the second
+#' year. The returned date is the Sunday of the final week of the season.
 #'
 #' @param x Season as a character string of the form "yyyy/yyyy", e.g.
 #'   "2019/2020".

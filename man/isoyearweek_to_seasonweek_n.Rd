@@ -18,9 +18,9 @@ Maps an ISO yearweek to its position within the surveillance season, where
 season week 1 corresponds to ISO week 35.
 }
 \details{
-The ISO week is extracted from the yearweek string and then converted with
-\code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}}, so the same season-week numbering and the 18.5
-half-step for ISO week 53 apply.
+This function takes the ISO week from the yearweek string and converts it
+with \code{\link[=isoweek_to_seasonweek_n]{isoweek_to_seasonweek_n()}}. The same season-week numbering applies,
+including the 18.5 half-step for ISO week 53.
 }
 \examples{
 isoyearweek_to_seasonweek_n(c("2021-01", "2021-35"))

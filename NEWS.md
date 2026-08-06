@@ -1,13 +1,37 @@
 # Version 2026.8.6
 
+## Licensing
+
+- The copyright holder is now **Folkehelseinstituttet**. It read "Core Surveillance", which
+  names the package family rather than a legal entity.
+- `DESCRIPTION` `Authors@R` now declares that holder with `role = "cph"`.
+  It declared no copyright holder at all, and neither did any other package
+  in the fleet. Nothing in `R CMD check` reports that.
+- The copyright year is now 2026. It read 2023.
+- `CLAUDE.md` now carries a Licensing section, so the year gets checked
+  rather than silently ageing.
+
 - Documentation only. No function changes behaviour.
 - `vignette("cstime")`, which pkgdown promotes to "Get started", gained an
-  overview at the front. It states what the package is for, the
-  `<from>_to_<to>_<suffix>` naming pattern that 32 of the 33 exports follow,
-  three worked examples of what surprises people (an ISO year is not a calendar
-  year, an ISO year has 52 or 53 weeks, a season week is not an ISO week), and
-  where cstime sits relative to cstidy.
+  overview at the front. The overview states what the package is for and
+  describes the `<from>_to_<to>_<suffix>` naming pattern that 32 of the 33
+  exports follow. It then works three examples of what surprises people:
+    - An ISO year is not a calendar year.
+    - An ISO year has 52 or 53 weeks.
+    - A season week is not an ISO week.
+
+  The overview closes with where cstime sits relative to cstidy.
 - The existing sections of `vignette("cstime")` are unchanged.
+- Removed a false sentence from `vignette("cstime")`. It claimed that cstime
+  provides functions to generate rolling date ranges for weekly, bi-weekly and
+  4-week averages. No such function exists. None of the 33 exports returns a
+  range, and `R/`, `man/` and `NAMESPACE` hold zero matches for "rolling",
+  "bi-week", "4-week" or "average".
+- Rewrote the roxygen prose, the three vignettes, `README.md` and `index.md` to
+  the house technical-prose standard (ASD-STE100, Simplified Technical English).
+  Sentences over 25 words are now zero in `R/`, zero in the vignette body text,
+  zero in `README.md` and zero in `index.md`. No claim changed apart from the
+  removal described above.
 
 # Version 2026.8.4
 

@@ -25,10 +25,13 @@ ISO quarter as a numeric vector (1 to 4).
 Converts a date to an ISO-week-based quarter (1 to 4), returned as a number.
 }
 \details{
-The quarter is derived from the ISO week rather than the calendar month:
-weeks 1 to 13 are quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to 39 are
-quarter 3, and weeks 40 onwards (including week 53 in long ISO years) are
-quarter 4.
+The quarter comes from the ISO week, not from the calendar month:
+\itemize{
+\item Weeks 1 to 13 are quarter 1.
+\item Weeks 14 to 26 are quarter 2.
+\item Weeks 27 to 39 are quarter 3.
+\item Weeks 40 and later are quarter 4. This includes week 53 in a long ISO year.
+}
 }
 \examples{
 date_to_isoquarter_n(as.Date("2021-08-11"))
