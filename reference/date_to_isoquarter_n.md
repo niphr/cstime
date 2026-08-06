@@ -30,10 +30,16 @@ ISO quarter as a numeric vector (1 to 4).
 
 ## Details
 
-The quarter is derived from the ISO week rather than the calendar month:
-weeks 1 to 13 are quarter 1, weeks 14 to 26 are quarter 2, weeks 27 to
-39 are quarter 3, and weeks 40 onwards (including week 53 in long ISO
-years) are quarter 4.
+The quarter comes from the ISO week, not from the calendar month:
+
+- Weeks 1 to 13 are quarter 1.
+
+- Weeks 14 to 26 are quarter 2.
+
+- Weeks 27 to 39 are quarter 3.
+
+- Weeks 40 and later are quarter 4. This includes week 53 in a long ISO
+  year.
 
 ## See also
 

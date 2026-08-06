@@ -53,11 +53,25 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="2026.8.6" id="version-202686">Version 2026.8.6<a class="anchor" aria-label="anchor" href="#version-202686"></a></h2>
-<ul><li>Documentation only. No function changes behaviour.</li>
+<div class="section level3">
+<h3 id="licensing-2026-8-6">Licensing<a class="anchor" aria-label="anchor" href="#licensing-2026-8-6"></a></h3>
+<ul><li><p>The copyright holder is now <strong>Folkehelseinstituttet</strong>. It read “Core Surveillance”, which names the package family rather than a legal entity.</p></li>
+<li><p><code>DESCRIPTION</code> <code>Authors@R</code> now declares that holder with <code>role = "cph"</code>. It declared no copyright holder at all, and neither did any other package in the fleet. Nothing in <code>R CMD check</code> reports that.</p></li>
+<li><p>The copyright year is now 2026. It read 2023.</p></li>
+<li><p><code>CLAUDE.md</code> now carries a Licensing section, so the year gets checked rather than silently ageing.</p></li>
+<li><p>Documentation only. No function changes behaviour.</p></li>
 <li>
-<code><a href="../articles/cstime.html">vignette("cstime")</a></code>, which pkgdown promotes to “Get started”, gained an overview at the front. It states what the package is for, the <code>&lt;from&gt;_to_&lt;to&gt;_&lt;suffix&gt;</code> naming pattern that 32 of the 33 exports follow, three worked examples of what surprises people (an ISO year is not a calendar year, an ISO year has 52 or 53 weeks, a season week is not an ISO week), and where cstime sits relative to cstidy.</li>
-<li>The existing sections of <code><a href="../articles/cstime.html">vignette("cstime")</a></code> are unchanged.</li>
+<p><code><a href="../articles/cstime.html">vignette("cstime")</a></code>, which pkgdown promotes to “Get started”, gained an overview at the front. The overview states what the package is for and describes the <code>&lt;from&gt;_to_&lt;to&gt;_&lt;suffix&gt;</code> naming pattern that 32 of the 33 exports follow. It then works three examples of what surprises people:</p>
+<ul><li>An ISO year is not a calendar year.</li>
+<li>An ISO year has 52 or 53 weeks.</li>
+<li>A season week is not an ISO week.</li>
+</ul><p>The overview closes with where cstime sits relative to cstidy.</p>
+</li>
+<li><p>The existing sections of <code><a href="../articles/cstime.html">vignette("cstime")</a></code> are unchanged.</p></li>
+<li><p>Removed a false sentence from <code><a href="../articles/cstime.html">vignette("cstime")</a></code>. It claimed that cstime provides functions to generate rolling date ranges for weekly, bi-weekly and 4-week averages. No such function exists. None of the 33 exports returns a range, and <code>R/</code>, <code>man/</code> and <code>NAMESPACE</code> hold zero matches for “rolling”, “bi-week”, “4-week” or “average”.</p></li>
+<li><p>Rewrote the roxygen prose, the three vignettes, <code>README.md</code> and <code>index.md</code> to the house technical-prose standard (ASD-STE100, Simplified Technical English). Sentences over 25 words are now zero in <code>R/</code>, zero in the vignette body text, zero in <code>README.md</code> and zero in <code>index.md</code>. No claim changed apart from the removal described above.</p></li>
 </ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="2026.8.4" id="version-202684">Version 2026.8.4<a class="anchor" aria-label="anchor" href="#version-202684"></a></h2>
 <ul><li>Documentation only. No function changes behaviour.</li>

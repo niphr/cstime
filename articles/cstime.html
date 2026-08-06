@@ -92,11 +92,9 @@ health surveillance. Its main purpose is consistent conversion
 between:</p>
 <ul>
 <li>Date.</li>
-<li>Isoyear, isoweek, isoyearweek.</li>
+<li>ISO year, ISO week, ISO yearweek.</li>
 <li>Season week.</li>
 </ul>
-<p>It also provides functions to generate rolling date ranges for
-computing weekly, bi-weekly, and 4-week averages.</p>
 <p><code>cstime</code> is part of the <a href="https://niphr.github.io/packages.html" class="external-link">csverse</a> package
 suite.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
@@ -212,14 +210,14 @@ including what happens in ISO week 53.</li>
 </ul>
 </div>
 <div class="section level2">
-<h2 id="date-to-isoyear">Date to isoyear<a class="anchor" aria-label="anchor" href="#date-to-isoyear"></a>
+<h2 id="date-to-iso-year">Date to ISO year<a class="anchor" aria-label="anchor" href="#date-to-iso-year"></a>
 </h2>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/date_to_isoyear_c.html">date_to_isoyear_c</a></span><span class="op">(</span><span class="st">'2021-01-01'</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "2020"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="isoyearweek-string-to-isoyear-and-isoweek">Isoyearweek string to isoyear and isoweek<a class="anchor" aria-label="anchor" href="#isoyearweek-string-to-isoyear-and-isoweek"></a>
+<h2 id="iso-yearweek-string-to-iso-year-and-iso-week">ISO yearweek string to ISO year and ISO week<a class="anchor" aria-label="anchor" href="#iso-yearweek-string-to-iso-year-and-iso-week"></a>
 </h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/isoyearweek_to_isoyear_c.html">isoyearweek_to_isoyear_c</a></span><span class="op">(</span><span class="st">"2021-02"</span><span class="op">)</span></span>
@@ -228,7 +226,7 @@ including what happens in ISO week 53.</li>
 <span><span class="co">#&gt; [1] "02"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="season-week-and-isoweek">Season week and isoweek<a class="anchor" aria-label="anchor" href="#season-week-and-isoweek"></a>
+<h2 id="season-week-and-iso-week">Season week and ISO week<a class="anchor" aria-label="anchor" href="#season-week-and-iso-week"></a>
 </h2>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/seasonweek_to_isoweek_n.html">seasonweek_to_isoweek_n</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>

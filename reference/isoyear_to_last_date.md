@@ -32,10 +32,10 @@ Sunday of each ISO year.
 ## Details
 
 ISO weeks end on Sunday, so the returned date is the Sunday of the final
-ISO week. Because ISO years and calendar years are not aligned, this
-date can fall in early January of the following calendar year (for
-example the last date of ISO year 2020 is 2021-01-03). The year is
-accepted as either a number or a character string.
+ISO week. ISO years and calendar years are not aligned. The returned
+date can therefore fall in early January of the following calendar year.
+For example, the last date of ISO year 2020 is 2021-01-03. The function
+accepts the year as either a number or a character string.
 
 ## See also
 

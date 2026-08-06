@@ -30,11 +30,11 @@ Season week as a numeric vector (ISO week 53 returns 18.5).
 
 ## Details
 
-Surveillance seasons start at ISO week 35, so ISO week 35 is season week
-1, ISO week 36 is season week 2, and so on, wrapping around the new
-year. ISO week 53 (which only occurs in long ISO years) maps to the
-half-step season week 18.5 so that the surrounding weeks keep consistent
-numbering.
+Surveillance seasons start at ISO week 35, so ISO week 35 is season
+week 1. ISO week 36 is season week 2, and the numbering continues across
+the new year. ISO week 53 occurs only in long ISO years. It maps to the
+half-step season week 18.5, so that the surrounding weeks keep
+consistent numbering.
 
 ## See also
 

@@ -1,12 +1,12 @@
 # Season week
 
 Season week is the week number within an epidemiological season. It is
-used for surveillance outcomes such as influenza, where aligning data to
-a season rather than a calendar year makes trends easier to compare
-across years.
+used for surveillance outcomes such as influenza. Alignment to a season
+rather than to a calendar year makes trends easier to compare across
+years.
 
-Isoweek runs from 1 to 53; season week runs from 1 to 52. When isoweek
-is 53, the corresponding season week is 18.5.
+The ISO week runs from 1 to 53. Season week runs from 1 to 52. When the
+ISO week is 53, the corresponding season week is 18.5.
 
 ``` r
 library(cstime)
@@ -21,10 +21,10 @@ library(data.table)
 #>     %notin%
 ```
 
-## Mapping between isoweek and season week
+## Mapping between ISO week and season week
 
-The chart below shows the relationship across all isoweek values, with
-the special case of isoweek 53 highlighted.
+The chart below shows the relationship across all ISO week values. It
+marks the special case of ISO week 53 in a separate colour.
 
 ![](season_files/figure-html/unnamed-chunk-2-1.png)
 

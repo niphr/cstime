@@ -4,11 +4,8 @@
 surveillance. Its main purpose is consistent conversion between:
 
 - Date.
-- Isoyear, isoweek, isoyearweek.
+- ISO year, ISO week, ISO yearweek.
 - Season week.
-
-It also provides functions to generate rolling date ranges for computing
-weekly, bi-weekly, and 4-week averages.
 
 `cstime` is part of the [csverse](https://niphr.github.io/packages.html)
 package suite.
@@ -127,14 +124,14 @@ isoweek, season, quarter – those values come from cstime.
 - [Season week](https://niphr.github.io/cstime/articles/season.md)
   covers season week numbering, including what happens in ISO week 53.
 
-## Date to isoyear
+## Date to ISO year
 
 ``` r
 date_to_isoyear_c('2021-01-01')
 #> [1] "2020"
 ```
 
-## Isoyearweek string to isoyear and isoweek
+## ISO yearweek string to ISO year and ISO week
 
 ``` r
 isoyearweek_to_isoyear_c("2021-02")
@@ -143,7 +140,7 @@ isoyearweek_to_isoweek_c("2021-02")
 #> [1] "02"
 ```
 
-## Season week and isoweek
+## Season week and ISO week
 
 ``` r
 seasonweek_to_isoweek_n(10)

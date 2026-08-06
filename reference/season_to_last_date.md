@@ -28,11 +28,11 @@ Sunday of each season.
 
 ## Details
 
-A season is written "yyyy/yyyy" where the two years are consecutive (for
-example "2019/2020"). Seasons are aligned to ISO weeks, with season week
-1 starting at ISO week 35; the season therefore ends in late summer of
-the second year. The returned date is the Sunday of the final week of
-the season.
+A season is written "yyyy/yyyy" where the two years are consecutive, for
+example "2019/2020". Seasons are aligned to ISO weeks, and season week 1
+starts at ISO week 35. The season therefore ends in late summer of the
+second year. The returned date is the Sunday of the final week of the
+season.
 
 ## See also
 

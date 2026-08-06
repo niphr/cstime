@@ -4,22 +4,21 @@ Highlights
 
 ### ISO week conversions
 
-Convert between date, isoyear, isoweek, and isoyearweek strings using a
-consistent set of functions – suffixed `_c` for character output and
-`_n` for numeric.
+Convert between date, ISO year, ISO week and ISO yearweek. The suffix
+says what comes back: `_c` a character string, `_n` a number.
 
 02
 
 ### Season week
 
-Translate between isoweek and season week, the
-week-within-epidemiological-season numbering used to align influenza and
-other seasonal surveillance data across years.
+Convert between ISO week and season week. Season week numbers the weeks
+within an epidemiological season, so influenza and other seasonal data
+line up across years.
 
 03
 
 ### Bundled calendars
 
-Lookup tables for dates within each ISO yearweek, plus Norwegian public
-holidays and workday counts by date and by week, ready to join into
-surveillance datasets.
+Lookup tables give the dates within each ISO yearweek. Two more tables
+give Norwegian public holidays and workday counts, by date and by ISO
+yearweek. All three are ready to join into a surveillance dataset.

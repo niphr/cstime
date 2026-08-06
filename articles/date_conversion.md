@@ -1,12 +1,11 @@
 # Date, year, week conversion
 
-These functions simplify working with dates and times across different
+These functions simplify work with dates and times across different
 formats.
 
 Inputs can be numeric (e.g. `3`) or character (e.g. `"03"`,
-`"2020-03"`). The output type is controlled by the function suffix:
-functions ending in `_c` return a character, those ending in `_n` return
-a double.
+`"2020-03"`). The function suffix controls the output type: functions
+ending in `_c` return a character, those ending in `_n` return a double.
 
 ``` r
 library(cstime)
@@ -17,8 +16,8 @@ library(magrittr)
 
 ## Which year and week is this date?
 
-When called with no arguments, the functions return the isoyear or
-isoweek of today.
+With no arguments, these functions return the ISO year or ISO week of
+today.
 
 ``` r
 date_to_isoyear_c()
@@ -42,7 +41,7 @@ date_to_isoyearweek_c('2021-08-11')
 #> [1] "2021-32"
 ```
 
-## Get isoyear and isoweek from an isoyearweek string
+## Get ISO year and ISO week from an ISO yearweek string
 
 ``` r
 isoyearweek_to_isoyear_c("2021-02")
@@ -55,8 +54,8 @@ isoyearweek_to_isoweek_n("2021-02")
 #> [1] 2
 ```
 
-The built-in dataset `dates_by_isoyearweek` provides a reference table.
-Here is how to subset it to specific years:
+The built-in dataset `dates_by_isoyearweek` is a reference table. Subset
+it to specific ISO years like this:
 
 ``` r
 yrwk_19_20 <- dates_by_isoyearweek[isoyear %in% c(2019, 2020)]

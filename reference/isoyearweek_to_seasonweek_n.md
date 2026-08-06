@@ -22,11 +22,11 @@ Season week as a numeric vector.
 
 ## Details
 
-The ISO week is extracted from the yearweek string and then converted
-with
-[`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md),
-so the same season-week numbering and the 18.5 half-step for ISO week 53
-apply.
+This function takes the ISO week from the yearweek string and converts
+it with
+[`isoweek_to_seasonweek_n()`](https://niphr.github.io/cstime/reference/isoweek_to_seasonweek_n.md).
+The same season-week numbering applies, including the 18.5 half-step for
+ISO week 53.
 
 ## See also
 
