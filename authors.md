@@ -18,13 +18,13 @@ Source:
 [`DESCRIPTION`](https://github.com/niphr/cstime/blob/main/DESCRIPTION)
 
 Zhang C, White RA (2026). *cstime: Date and Time Functions for Public
-Health Purposes*. R package version 2026.8.4,
+Health Purposes*. R package version 2026.8.6,
 <https://niphr.github.io/cstime/>.
 
     @Manual{,
       title = {cstime: Date and Time Functions for Public Health Purposes},
       author = {Chi Zhang and Richard Aubrey White},
       year = {2026},
-      note = {R package version 2026.8.4},
+      note = {R package version 2026.8.6},
       url = {https://niphr.github.io/cstime/},
     }

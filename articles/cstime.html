@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">cstime</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2026.8.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">2026.8.6</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -101,20 +101,127 @@ computing weekly, bi-weekly, and 4-week averages.</p>
 suite.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://niphr.github.io/cstime/">cstime</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; cstime 2026.8.4</span></span>
+<span><span class="co">#&gt; cstime 2026.8.6</span></span>
 <span><span class="co">#&gt; https://niphr.github.io/cstime/</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org" class="external-link">magrittr</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
+<h2 id="what-cstime-is-for">What cstime is for<a class="anchor" aria-label="anchor" href="#what-cstime-is-for"></a>
+</h2>
+<p>Public health surveillance counts cases by week. The week is the unit
+of analysis, not the calendar month. <code>cstime</code> converts a date
+into the ISO week, ISO year, season or quarter that contains it, and
+converts back the other way.</p>
+</div>
+<div class="section level2">
+<h2 id="how-the-function-names-work">How the function names work<a class="anchor" aria-label="anchor" href="#how-the-function-names-work"></a>
+</h2>
+<p>Almost every name is built the same way:</p>
+<pre><code>&lt;from&gt;_to_&lt;to&gt;_&lt;suffix&gt;</code></pre>
+<p>The suffix says what type comes back. <code>_c</code> returns a
+character string, <code>_n</code> returns a number, <code>_date</code>
+returns a <code>Date</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/date_to_isoyearweek_c.html">date_to_isoyearweek_c</a></span><span class="op">(</span><span class="st">"2021-01-01"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2020-53"</span></span>
+<span><span class="fu"><a href="../reference/isoyearweek_to_isoyear_n.html">isoyearweek_to_isoyear_n</a></span><span class="op">(</span><span class="st">"2021-01"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 2021</span></span>
+<span><span class="fu"><a href="../reference/isoyearweek_to_last_date.html">isoyearweek_to_last_date</a></span><span class="op">(</span><span class="st">"2021-01"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2021-01-10"</span></span></code></pre></div>
+<p>cstime exports 33 functions. All 33 end in <code>_c</code> (17 of
+them), <code>_n</code> (13) or <code>_date</code> (3). All but one also
+follow <code>&lt;from&gt;_to_&lt;to&gt;</code>. The exception is
+<code><a href="../reference/now_c.html">now_c()</a></code>, which reads the clock instead of converting. Once
+you know the pattern, you can guess a function name instead of searching
+for it.</p>
+</div>
+<div class="section level2">
+<h2 id="three-things-that-are-easy-to-get-wrong">Three things that are easy to get wrong<a class="anchor" aria-label="anchor" href="#three-things-that-are-easy-to-get-wrong"></a>
+</h2>
+<p><strong>An ISO year is not a calendar year.</strong> 2020-12-31 and
+2021-01-01 sit in different calendar years, but both sit in ISO yearweek
+2020-53.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2020-12-31"</span>, <span class="st">"2021-01-01"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  date <span class="op">=</span> <span class="va">d</span>,</span>
+<span>  calyear <span class="op">=</span> <span class="fu"><a href="../reference/date_to_calyear_n.html">date_to_calyear_n</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>,</span>
+<span>  isoyear <span class="op">=</span> <span class="fu"><a href="../reference/date_to_isoyear_n.html">date_to_isoyear_n</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>,</span>
+<span>  isoyearweek <span class="op">=</span> <span class="fu"><a href="../reference/date_to_isoyearweek_c.html">date_to_isoyearweek_c</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt;         date calyear isoyear isoyearweek</span></span>
+<span><span class="co">#&gt; 1 2020-12-31    2020    2020     2020-53</span></span>
+<span><span class="co">#&gt; 2 2021-01-01    2021    2020     2020-53</span></span></code></pre></div>
+<p><strong>An ISO year has 52 or 53 weeks.</strong> Do not assume 52.
+2015, 2020 and 2026 each have 53.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  isoyear <span class="op">=</span> <span class="fl">2015</span><span class="op">:</span><span class="fl">2026</span>,</span>
+<span>  weeks_in_isoyear <span class="op">=</span> <span class="fu"><a href="../reference/isoyear_to_last_isoweek_n.html">isoyear_to_last_isoweek_n</a></span><span class="op">(</span><span class="fl">2015</span><span class="op">:</span><span class="fl">2026</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt;    isoyear weeks_in_isoyear</span></span>
+<span><span class="co">#&gt; 1     2015               53</span></span>
+<span><span class="co">#&gt; 2     2016               52</span></span>
+<span><span class="co">#&gt; 3     2017               52</span></span>
+<span><span class="co">#&gt; 4     2018               52</span></span>
+<span><span class="co">#&gt; 5     2019               52</span></span>
+<span><span class="co">#&gt; 6     2020               53</span></span>
+<span><span class="co">#&gt; 7     2021               52</span></span>
+<span><span class="co">#&gt; 8     2022               52</span></span>
+<span><span class="co">#&gt; 9     2023               52</span></span>
+<span><span class="co">#&gt; 10    2024               52</span></span>
+<span><span class="co">#&gt; 11    2025               52</span></span>
+<span><span class="co">#&gt; 12    2026               53</span></span></code></pre></div>
+<p><strong>A season week is not an ISO week.</strong> A season starts in
+ISO week 35 and runs past New Year, so one season covers two ISO years.
+A season also numbers its own weeks from 1, so ISO week 35 is season
+week 1.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"2020-08-24"</span>, <span class="st">"2020-12-28"</span>, <span class="st">"2021-01-04"</span>, <span class="st">"2021-08-29"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span>  date <span class="op">=</span> <span class="va">d</span>,</span>
+<span>  isoyearweek <span class="op">=</span> <span class="fu"><a href="../reference/date_to_isoyearweek_c.html">date_to_isoyearweek_c</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span>,</span>
+<span>  season <span class="op">=</span> <span class="fu"><a href="../reference/date_to_season_c.html">date_to_season_c</a></span><span class="op">(</span><span class="va">d</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="co">#&gt;         date isoyearweek    season</span></span>
+<span><span class="co">#&gt; 1 2020-08-24     2020-35 2020/2021</span></span>
+<span><span class="co">#&gt; 2 2020-12-28     2020-53 2020/2021</span></span>
+<span><span class="co">#&gt; 3 2021-01-04     2021-01 2020/2021</span></span>
+<span><span class="co">#&gt; 4 2021-08-29     2021-34 2020/2021</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/isoweek_to_seasonweek_n.html">isoweek_to_seasonweek_n</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">35</span>, <span class="fl">52</span>, <span class="fl">1</span>, <span class="fl">34</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1]  1 18 19 52</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="cstime-and-the-other-cs-packages">cstime and the other cs packages<a class="anchor" aria-label="anchor" href="#cstime-and-the-other-cs-packages"></a>
+</h2>
+<p><code>cstime</code> needs no other cs package to run.
+<code>cstidy</code> needs cstime: when cstidy fills the time columns of
+a surveillance table – isoyear, isoweek, season, quarter – those values
+come from cstime.</p>
+</div>
+<div class="section level2">
+<h2 id="where-to-go-next">Where to go next<a class="anchor" aria-label="anchor" href="#where-to-go-next"></a>
+</h2>
+<ul>
+<li>
+<a href="date_conversion.html">Date, year, week conversion</a>
+covers dates, ISO years and ISO weeks.</li>
+<li>
+<a href="season.html">Season week</a> covers season week numbering,
+including what happens in ISO week 53.</li>
+</ul>
+</div>
+<div class="section level2">
 <h2 id="date-to-isoyear">Date to isoyear<a class="anchor" aria-label="anchor" href="#date-to-isoyear"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/date_to_isoyear_c.html">date_to_isoyear_c</a></span><span class="op">(</span><span class="st">'2021-01-01'</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "2020"</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="isoyearweek-string-to-isoyear-and-isoweek">Isoyearweek string to isoyear and isoweek<a class="anchor" aria-label="anchor" href="#isoyearweek-string-to-isoyear-and-isoweek"></a>
 </h2>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/isoyearweek_to_isoyear_c.html">isoyearweek_to_isoyear_c</a></span><span class="op">(</span><span class="st">"2021-02"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "2021"</span></span>
 <span><span class="fu"><a href="../reference/isoyearweek_to_isoweek_c.html">isoyearweek_to_isoweek_c</a></span><span class="op">(</span><span class="st">"2021-02"</span><span class="op">)</span></span>
@@ -123,7 +230,7 @@ suite.</p>
 <div class="section level2">
 <h2 id="season-week-and-isoweek">Season week and isoweek<a class="anchor" aria-label="anchor" href="#season-week-and-isoweek"></a>
 </h2>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/seasonweek_to_isoweek_n.html">seasonweek_to_isoweek_n</a></span><span class="op">(</span><span class="fl">10</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 44</span></span>
 <span><span class="fu"><a href="../reference/isoweek_to_seasonweek_n.html">isoweek_to_seasonweek_n</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>

@@ -10,7 +10,7 @@ a double.
 
 ``` r
 library(cstime)
-#> cstime 2026.8.4
+#> cstime 2026.8.6
 #> https://niphr.github.io/cstime/
 library(magrittr)
 ```
