@@ -33,6 +33,73 @@ library(cstime)
 library(magrittr)
 ```
 
+## What cstime is for
+
+Public health surveillance counts cases by week. The week is the unit of analysis, not the calendar month. `cstime` converts a date into the ISO week, ISO year, season or quarter that contains it, and converts back the other way.
+
+## How the function names work
+
+Almost every name is built the same way:
+
+```
+<from>_to_<to>_<suffix>
+```
+
+The suffix says what type comes back. `_c` returns a character string, `_n` returns a number, `_date` returns a `Date`.
+
+```{r}
+date_to_isoyearweek_c("2021-01-01")
+isoyearweek_to_isoyear_n("2021-01")
+isoyearweek_to_last_date("2021-01")
+```
+
+cstime exports 33 functions. All 33 end in `_c` (17 of them), `_n` (13) or `_date` (3). All but one also follow `<from>_to_<to>`. The exception is `now_c()`, which reads the clock instead of converting. Once you know the pattern, you can guess a function name instead of searching for it.
+
+## Three things that are easy to get wrong
+
+**An ISO year is not a calendar year.** 2020-12-31 and 2021-01-01 sit in different calendar years, but both sit in ISO yearweek 2020-53.
+
+```{r}
+d <- as.Date(c("2020-12-31", "2021-01-01"))
+data.frame(
+  date = d,
+  calyear = date_to_calyear_n(d),
+  isoyear = date_to_isoyear_n(d),
+  isoyearweek = date_to_isoyearweek_c(d)
+)
+```
+
+**An ISO year has 52 or 53 weeks.** Do not assume 52. 2015, 2020 and 2026 each have 53.
+
+```{r}
+data.frame(
+  isoyear = 2015:2026,
+  weeks_in_isoyear = isoyear_to_last_isoweek_n(2015:2026)
+)
+```
+
+**A season week is not an ISO week.** A season starts in ISO week 35 and runs past New Year, so one season covers two ISO years. A season also numbers its own weeks from 1, so ISO week 35 is season week 1.
+
+```{r}
+d <- as.Date(c("2020-08-24", "2020-12-28", "2021-01-04", "2021-08-29"))
+data.frame(
+  date = d,
+  isoyearweek = date_to_isoyearweek_c(d),
+  season = date_to_season_c(d)
+)
+
+isoweek_to_seasonweek_n(c(35, 52, 1, 34))
+```
+
+## cstime and the other cs packages
+
+`cstime` needs no other cs package to run. `cstidy` needs cstime: when cstidy fills the time columns of a surveillance table -- isoyear, isoweek, season, quarter -- those values come from cstime.
+
+## Where to go next
+
+- [Date, year, week conversion](date_conversion.html) covers dates, ISO years and ISO weeks.
+- [Season week](season.html) covers season week numbering, including what happens in ISO week 53.
+
 ## Date to isoyear
 
 ```{r}

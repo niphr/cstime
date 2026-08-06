@@ -1,6 +1,6 @@
 Package: cstime
 Title: Date and Time Functions for Public Health Purposes
-Version: 2026.8.4
+Version: 2026.8.6
 Authors@R: c(
   person("Chi", "Zhang", email = "andreachizhang@yahoo.com", role = c("aut"), 
     comment = c(ORCID = "0000-0003-0501-5909")

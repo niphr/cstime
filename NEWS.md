@@ -1,3 +1,14 @@
+# Version 2026.8.6
+
+- Documentation only. No function changes behaviour.
+- `vignette("cstime")`, which pkgdown promotes to "Get started", gained an
+  overview at the front. It states what the package is for, the
+  `<from>_to_<to>_<suffix>` naming pattern that 32 of the 33 exports follow,
+  three worked examples of what surprises people (an ISO year is not a calendar
+  year, an ISO year has 52 or 53 weeks, a season week is not an ISO week), and
+  where cstime sits relative to cstidy.
+- The existing sections of `vignette("cstime")` are unchanged.
+
 # Version 2026.8.4
 
 - Documentation only. No function changes behaviour.
