@@ -25,9 +25,9 @@ date_to_isoyear_c()
 date_to_isoyear_n()
 #> [1] 2026
 date_to_isoweek_c()
-#> [1] "32"
+#> [1] "34"
 date_to_isoweek_n()
-#> [1] 32
+#> [1] 34
 # provide a date
 date_to_isoyear_c('2021-01-01')
 #> [1] "2020"
