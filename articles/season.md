@@ -10,7 +10,7 @@ ISO week is 53, the corresponding season week is 18.5.
 
 ``` r
 library(cstime)
-#> cstime 2026.8.6
+#> cstime 2026.8.20
 #> https://niphr.github.io/cstime/
 library(magrittr)
 library(data.table)

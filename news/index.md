@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 2026.8.20
+
+- `R/.DS_Store` is removed. A macOS Finder artefact was committed inside
+  `R/`, so it shipped in the tarball. `.gitignore` now covers it.
+- The version is bumped because the tarball changed. `2026.8.6` was
+  already published from an earlier tree, and one version number must
+  not name two.
+
 ## Version 2026.8.6
 
 ### Licensing
