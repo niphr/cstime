@@ -1,5 +1,18 @@
 # Changelog
 
+## Version 2026.8.21
+
+- The package drops `magrittr`. Every `%>%` is now the base pipe `|>`,
+  and `magrittr` is gone from `DESCRIPTION`.
+- The rewrite is a relocation, not an edit. Each `%>%` call was
+  transformed the way R’s parser transforms `|>`, and the resulting tree
+  was required to match the tree parsed from the rewritten file. A file
+  whose trees disagreed was left untouched and converted by hand
+  instead.
+- [`utils::globalVariables()`](https://rdrr.io/r/utils/globalVariables.html)
+  no longer declares `%>%` or `:=`. Both are imported, so neither entry
+  ever suppressed anything. Only `.` is declared now.
+
 ## Version 2026.8.20
 
 - `R/.DS_Store` is removed. A macOS Finder artefact was committed inside

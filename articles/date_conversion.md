@@ -9,9 +9,8 @@ ending in `_c` return a character, those ending in `_n` return a double.
 
 ``` r
 library(cstime)
-#> cstime 2026.8.20
+#> cstime 2026.8.21
 #> https://niphr.github.io/cstime/
-library(magrittr)
 ```
 
 ## Which year and week is this date?

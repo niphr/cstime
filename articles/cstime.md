@@ -12,9 +12,8 @@ package suite.
 
 ``` r
 library(cstime)
-#> cstime 2026.8.20
+#> cstime 2026.8.21
 #> https://niphr.github.io/cstime/
-library(magrittr)
 ```
 
 ## What cstime is for
