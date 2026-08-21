@@ -29,9 +29,9 @@ isoyearweek_to_seasonweek_n(c("2021-01", "2021-35"))
 \code{vignette("season", package = "cstime")} for worked season week
 conversions. No vignette runs this function.
 
-Other ISO yearweek-to-number converters: 
-\code{\link{isoyearweek_to_isoquarter_n}()},
-\code{\link{isoyearweek_to_isoweek_n}()},
-\code{\link{isoyearweek_to_isoyear_n}()}
+Other ISO yearweek-to-number converters:
+\code{\link[=isoyearweek_to_isoquarter_n]{isoyearweek_to_isoquarter_n()}},
+\code{\link[=isoyearweek_to_isoweek_n]{isoyearweek_to_isoweek_n()}},
+\code{\link[=isoyearweek_to_isoyear_n]{isoyearweek_to_isoyear_n()}}
 }
 \concept{ISO yearweek-to-number converters}

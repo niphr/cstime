@@ -35,9 +35,9 @@ isoyearweek_to_isoweek_c("2020-19")
 \code{vignette("date_conversion", package = "cstime")}, which both run this
 function.
 
-Other ISO yearweek-to-character converters: 
-\code{\link{isoyearweek_to_isoquarter_c}()},
-\code{\link{isoyearweek_to_isoyear_c}()},
-\code{\link{isoyearweek_to_isoyearquarter_c}()}
+Other ISO yearweek-to-character converters:
+\code{\link[=isoyearweek_to_isoquarter_c]{isoyearweek_to_isoquarter_c()}},
+\code{\link[=isoyearweek_to_isoyear_c]{isoyearweek_to_isoyear_c()}},
+\code{\link[=isoyearweek_to_isoyearquarter_c]{isoyearweek_to_isoyearquarter_c()}}
 }
 \concept{ISO yearweek-to-character converters}

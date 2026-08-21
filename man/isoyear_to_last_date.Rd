@@ -19,7 +19,7 @@ isoyear_to_last_date(x)
 \item{x}{ISO year as a number or character string, e.g. 2020 or "2020".}
 }
 \value{
-A \link[base:Dates]{base::Date} vector giving the last Sunday of each ISO year.
+A \link[base:Date]{base::Date} vector giving the last Sunday of each ISO year.
 }
 \description{
 Returns the date of the Sunday that ends the last ISO week of a given ISO

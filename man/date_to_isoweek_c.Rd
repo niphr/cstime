@@ -38,13 +38,13 @@ date_to_isoweek_c("2021-01-01")
 \code{vignette("date_conversion", package = "cstime")}, which runs this
 function.
 
-Other date-to-character converters: 
-\code{\link{date_to_calmonth_c}()},
-\code{\link{date_to_calyear_c}()},
-\code{\link{date_to_calyearmonth_c}()},
-\code{\link{date_to_isoquarter_c}()},
-\code{\link{date_to_isoyear_c}()},
-\code{\link{date_to_isoyearquarter_c}()},
-\code{\link{date_to_isoyearweek_c}()}
+Other date-to-character converters:
+\code{\link[=date_to_calmonth_c]{date_to_calmonth_c()}},
+\code{\link[=date_to_calyear_c]{date_to_calyear_c()}},
+\code{\link[=date_to_calyearmonth_c]{date_to_calyearmonth_c()}},
+\code{\link[=date_to_isoquarter_c]{date_to_isoquarter_c()}},
+\code{\link[=date_to_isoyear_c]{date_to_isoyear_c()}},
+\code{\link[=date_to_isoyearquarter_c]{date_to_isoyearquarter_c()}},
+\code{\link[=date_to_isoyearweek_c]{date_to_isoyearweek_c()}}
 }
 \concept{date-to-character converters}

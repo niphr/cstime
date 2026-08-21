@@ -17,7 +17,7 @@ season_to_last_date(x)
 "2019/2020".}
 }
 \value{
-A \link[base:Dates]{base::Date} vector giving the last Sunday of each season.
+A \link[base:Date]{base::Date} vector giving the last Sunday of each season.
 }
 \description{
 Returns the date of the Sunday that ends a given season.

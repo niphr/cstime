@@ -39,9 +39,9 @@ isoyearweek_to_isoquarter_n("2020-19")
 \code{vignette("date_conversion", package = "cstime")} for worked date,
 ISO year and ISO week conversions. No vignette runs this function.
 
-Other ISO yearweek-to-number converters: 
-\code{\link{isoyearweek_to_isoweek_n}()},
-\code{\link{isoyearweek_to_isoyear_n}()},
-\code{\link{isoyearweek_to_seasonweek_n}()}
+Other ISO yearweek-to-number converters:
+\code{\link[=isoyearweek_to_isoweek_n]{isoyearweek_to_isoweek_n()}},
+\code{\link[=isoyearweek_to_isoyear_n]{isoyearweek_to_isoyear_n()}},
+\code{\link[=isoyearweek_to_seasonweek_n]{isoyearweek_to_seasonweek_n()}}
 }
 \concept{ISO yearweek-to-number converters}

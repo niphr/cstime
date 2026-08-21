@@ -17,7 +17,7 @@ isoyearweek_to_last_date(x)
 "2020-19" for the 19th ISO week of 2020.}
 }
 \value{
-A \link[base:Dates]{base::Date} vector giving the Sunday of each ISO yearweek.
+A \link[base:Date]{base::Date} vector giving the Sunday of each ISO yearweek.
 }
 \description{
 Returns the date of the Sunday that ends a given ISO yearweek.
