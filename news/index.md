@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 2026.8.22
+
+- [`utils::globalVariables()`](https://rdrr.io/r/utils/globalVariables.html)
+  declared `%>%` and `:=` as well as `.`. Both are imported, so neither
+  entry ever suppressed anything. Only `.` is declared now.
+
 ## Version 2026.8.21
 
 - The package drops `magrittr`. Every `%>%` is now the base pipe `|>`,

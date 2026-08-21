@@ -9,7 +9,7 @@ ending in `_c` return a character, those ending in `_n` return a double.
 
 ``` r
 library(cstime)
-#> cstime 2026.8.21
+#> cstime 2026.8.22
 #> https://niphr.github.io/cstime/
 ```
 

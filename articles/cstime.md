@@ -12,7 +12,7 @@ package suite.
 
 ``` r
 library(cstime)
-#> cstime 2026.8.21
+#> cstime 2026.8.22
 #> https://niphr.github.io/cstime/
 ```
 
