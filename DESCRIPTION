@@ -1,6 +1,6 @@
 Package: cstime
 Title: Date and Time Functions for Public Health Purposes
-Version: 2026.8.21
+Version: 2026.8.22
 Authors@R:
     c(
       person(
