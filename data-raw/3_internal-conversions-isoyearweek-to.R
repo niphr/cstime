@@ -1,35 +1,35 @@
 devtools::load_all()
 
 isoyearweek_to_isoyear_c_internal <- function(yrwk) {
-  year_n <- stringr::str_split(yrwk, pattern = "-") %>%
-    purrr::map_chr(., function(x) {
+  year_n <- stringr::str_split(yrwk, pattern = "-") |>
+    purrr::map_chr(function(x) {
       x[1]
     })
   return(year_n)
 }
 
 isoyearweek_to_isoyear_n_internal <- function(yrwk) {
-  year_n <- stringr::str_split(yrwk, pattern = "-") %>%
-    purrr::map_chr(., function(x) {
+  year_n <- stringr::str_split(yrwk, pattern = "-") |>
+    purrr::map_chr(function(x) {
       x[1]
-    }) %>%
+    }) |>
     as.integer()
   return(year_n)
 }
 
 isoyearweek_to_isoweek_c_internal <- function(yrwk) {
-  week_c <- stringr::str_split(yrwk, pattern = "-") %>%
-    purrr::map_chr(., function(x) {
+  week_c <- stringr::str_split(yrwk, pattern = "-") |>
+    purrr::map_chr(function(x) {
       x[2]
     })
   return(week_c)
 }
 
 isoyearweek_to_isoweek_n_internal <- function(yrwk) {
-  week_n <- stringr::str_split(yrwk, pattern = "-") %>%
-    purrr::map_chr(., function(x) {
+  week_n <- stringr::str_split(yrwk, pattern = "-") |>
+    purrr::map_chr(function(x) {
       x[2]
-    }) %>%
+    }) |>
     as.integer()
   return(week_n)
 }

@@ -27,7 +27,6 @@ The ISO week runs from 1 to 53. Season week runs from 1 to 52. When the ISO week
 
 ```{r}
 library(cstime)
-library(magrittr)
 library(data.table)
 ```
 
